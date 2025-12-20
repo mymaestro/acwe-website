@@ -15,15 +15,25 @@
 # Generally you should only ignore the root vendor directory. It's important
 # that core/assets/vendor and any other vendor directories within contrib or
 # custom module, theme, etc., are not ignored unless you purposely do so.
-/vendor/
+
 # Ignore other common excludes
 /.env
+/.env.local
+
 /core
+/vendor/
 /modules/contrib
 /themes/contrib
 /profiles/contrib
+
+# Ignore database dump files.
 *.sql
 *.sql.gz
+
+# Ignore development files
+/node_modules
+/.idea
+/.vscode
 
 # Ignore local configuration files that may contain sensitive information.
 sites/*/settings.local.php
@@ -35,3 +45,8 @@ sites/*/private
 
 # Ignore multi-site test environment.
 sites/simpletest
+
+# Keep custom code
+!/modules/custom
+!/themes/custom
+!/profiles/custom
