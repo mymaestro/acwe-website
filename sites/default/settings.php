@@ -873,40 +873,17 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 # $settings['migrate_file_public_path'] = '';
 # $settings['migrate_file_private_path'] = '';
 
-$databases['default']['default'] = array (
-  'database' => 'u224542834_acwe751',
-  'username' => 'u224542834_acwe751',
-  'password' => '254SDp-t7]',
-  'host' => 'localhost',
-  'port' => '3306',
-  'isolation_level' => '',
-  'driver' => 'mysql',
-  'namespace' => 'Drupal\\mysql\\Driver\\Database\\mysql',
-  'autoload' => 'core/modules/mysql/src/Driver/Database/mysql/',
-);
 $settings['config_sync_directory'] = 'config/sync';
-$settings['trusted_host_patterns'] = [
-  '^acwe\.org$',
-  '^acwe\.local$',
-  '^.+\.acwe\.org$',
-  '^.+\.austincivicwindensemble\.org$',
-  '^lightpink-owl-454280\.hostingersite\.com$',
+
+$databases['default']['default'] = [
+  'database' => 'drupal_db',
+  'username' => 'drupal_user',
+  'password' => 'CHANGE_ME',
+  'host' => '127.0.0.1',
+  'driver' => 'mysql',
 ];
 
-/**
- * Load local development override configuration, if available.
- *
- * Create a settings.local.php file to override variables on secondary (staging,
- * development, etc.) installations of this site.
- *
- * Typical uses of settings.local.php include:
- * - Disabling caching.
- * - Disabling JavaScript/CSS compression.
- * - Rerouting outgoing emails.
- *
- * Keep this code block at the end of this file to take full effect.
- */
- if (file_exists($app_root . "/" . $site_path . "/settings.local.php")) {
-   include $app_root . "/" . $site_path . "/settings.local.php";
- }
-#  'prefix' => 'drct_',
+// Load local settings if they exist
+if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
+  include $app_root . '/' . $site_path . '/settings.local.php';
+}
