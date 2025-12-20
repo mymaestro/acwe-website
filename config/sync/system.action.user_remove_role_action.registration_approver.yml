@@ -1,0 +1,14 @@
+uuid: 5fffd9ea-8515-483f-94aa-694850117446
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.registration_approver
+  module:
+    - user
+id: user_remove_role_action.registration_approver
+label: 'Remove the Registration approver role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: registration_approver

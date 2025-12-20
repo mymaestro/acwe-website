@@ -1,0 +1,105 @@
+uuid: 5f92b4f6-672f-4958-b371-2a58fc54b6b3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.front_page_announcement.body
+    - field.field.node.front_page_announcement.comment_node_front_page_announ
+    - field.field.node.front_page_announcement.field_date
+    - field.field.node.front_page_announcement.field_image
+    - field.field.node.front_page_announcement.field_image_media
+    - field.field.node.front_page_announcement.field_tags
+    - node.type.front_page_announcement
+  module:
+    - layout_builder
+    - responsive_image
+    - text
+    - user
+  theme:
+    - bootstrap_barrio
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: barrio_cardhorizontal
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          57b51b53-384f-4112-9b73-a33f3e8a8e22:
+            uuid: 57b51b53-384f-4112-9b73-a33f3e8a8e22
+            region: first
+            configuration:
+              id: 'field_block:node:front_page_announcement:field_image_media'
+              label: Image
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_entity_view
+                label: hidden
+                settings:
+                  view_mode: default
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          b9d37df9-0665-4a28-9897-d84c2f14583d:
+            uuid: b9d37df9-0665-4a28-9897-d84c2f14583d
+            region: second
+            configuration:
+              id: 'field_block:node:front_page_announcement:body'
+              label: Body
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+id: node.front_page_announcement.default
+targetEntityType: node
+bundle: front_page_announcement
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: second
+  field_image:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: ''
+      image_link: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: first
+  field_image_media:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: left
+hidden:
+  comment_node_front_page_announ: true
+  field_date: true
+  field_tags: true
+  links: true

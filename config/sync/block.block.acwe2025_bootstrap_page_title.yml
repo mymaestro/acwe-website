@@ -1,0 +1,20 @@
+uuid: 387b105b-5598-4c34-9a28-0a5bfdc1ad65
+langcode: en
+status: true
+dependencies:
+  theme:
+    - acwe2025_bootstrap
+_core:
+  default_config_hash: ouz-Jr5EfrE6iN708-53o8J41W-9mqW2ELMpI9jYMAA
+id: acwe2025_bootstrap_page_title
+theme: acwe2025_bootstrap
+region: content
+weight: -8
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

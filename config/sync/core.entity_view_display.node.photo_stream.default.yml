@@ -1,0 +1,43 @@
+uuid: 8f150e69-6551-42a4-808f-251e0f9774e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.photo_stream.body
+    - field.field.node.photo_stream.comment_node_photo_stream
+    - field.field.node.photo_stream.field_photostream_images
+    - node.type.photo_stream
+  module:
+    - responsive_image
+    - text
+    - user
+id: node.photo_stream.default
+targetEntityType: node
+bundle: photo_stream
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_photostream_images:
+    type: responsive_image
+    label: above
+    settings:
+      responsive_image_style: ''
+      image_link: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  comment_node_photo_stream: true

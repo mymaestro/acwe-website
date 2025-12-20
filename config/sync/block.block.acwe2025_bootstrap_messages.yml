@@ -1,0 +1,22 @@
+uuid: 4a767a8e-e7cb-493d-bd97-ef8804b416c2
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - acwe2025_bootstrap
+_core:
+  default_config_hash: VZDxR0xdW-n-VWQRlRQjsiN-dgDS3-1Es-s1vXLfgsI
+id: acwe2025_bootstrap_messages
+theme: acwe2025_bootstrap
+region: highlighted
+weight: -7
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

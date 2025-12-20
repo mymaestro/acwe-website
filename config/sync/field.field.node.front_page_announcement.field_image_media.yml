@@ -1,0 +1,29 @@
+uuid: 1ed9a211-c474-4bf6-8cd4-8fd6e77f3339
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image_media
+    - media.type.image
+    - node.type.front_page_announcement
+id: node.front_page_announcement.field_image_media
+field_name: field_image_media
+entity_type: node
+bundle: front_page_announcement
+label: Image
+description: 'Choose an image to illustrate the article'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: name
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

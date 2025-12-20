@@ -1,0 +1,31 @@
+acwe_registration.keyword_settings:
+  path: '/admin/config/acwe/rehearsal-keyword'
+  defaults:
+    _form: '\Drupal\acwe_registration\Form\KeywordSettingsForm'
+    _title: 'Rehearsal Keyword Settings'
+  requirements:
+    _permission: 'administer acwe registration'
+
+acwe_registration.approval_dashboard:
+  path: '/admin/people/pending'
+  defaults:
+    _controller: '\Drupal\acwe_registration\Controller\ApprovalDashboardController::dashboard'
+    _title: 'Pending Registrations'
+  requirements:
+    _permission: 'manage acwe registration approvals'
+
+acwe_registration.approve_user:
+  path: '/admin/people/pending/{user}/approve'
+  defaults:
+    _form: '\Drupal\acwe_registration\Form\ApproveUserForm'
+    _title: 'Approve Registration'
+  requirements:
+    _permission: 'manage acwe registration approvals'
+
+acwe_registration.deny_user:
+  path: '/admin/people/pending/{user}/deny'
+  defaults:
+    _form: '\Drupal\acwe_registration\Form\DenyUserForm'
+    _title: 'Deny Registration'
+  requirements:
+    _permission: 'manage acwe registration approvals'

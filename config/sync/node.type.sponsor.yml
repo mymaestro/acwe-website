@@ -1,0 +1,16 @@
+uuid: 0afa0b3f-8983-451e-9f8d-eeb20d238504
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    parent: 'main:'
+name: Sponsor
+type: sponsor
+description: 'Content entered as this type shows the sponsor logo in the carousel on the front page.'
+help: null
+new_revision: false
+preview_mode: 1
+display_submitted: false

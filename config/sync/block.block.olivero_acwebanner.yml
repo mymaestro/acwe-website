@@ -1,0 +1,23 @@
+uuid: 2119fa49-aeaf-4786-a1f8-a929a427d0e0
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:4d6aaab0-6c0a-42f8-8b3d-7f06bd652ea1'
+  module:
+    - block_content
+  theme:
+    - olivero
+id: olivero_acwebanner
+theme: olivero
+region: footer_top
+weight: 0
+provider: null
+plugin: 'block_content:4d6aaab0-6c0a-42f8-8b3d-7f06bd652ea1'
+settings:
+  id: 'block_content:4d6aaab0-6c0a-42f8-8b3d-7f06bd652ea1'
+  label: 'ACWE Banner'
+  label_display: '0'
+  provider: block_content
+  view_mode: full
+visibility: {  }

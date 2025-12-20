@@ -1,0 +1,16 @@
+uuid: bd100c5b-3252-414d-ba3e-0a8820986708
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.section
+    - user.role.authenticated
+id: section-outsider
+label: Outsider
+weight: -101
+admin: false
+scope: outsider
+global_role: authenticated
+group_type: section
+permissions:
+  - 'view group'

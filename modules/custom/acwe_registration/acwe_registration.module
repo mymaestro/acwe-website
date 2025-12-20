@@ -1,0 +1,163 @@
+<?php
+
+/**
+ * @file
+ * ACWE Registration module - Custom registration workflow.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_help().
+ */
+function acwe_registration_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.acwe_registration':
+      return '<p>' . t('Custom registration workflow with keyword verification and approval system for ACWE members.') . '</p>';
+  }
+}
+
+/**
+ * Implements hook_node_access().
+ * 
+ * Restrict forum content to authenticated users only.
+ */
+function acwe_registration_node_access(NodeInterface $node, $op, AccountInterface $account) {
+  // Only apply to forum content type
+  if ($node->bundle() !== 'forum') {
+    return AccessResult::neutral();
+  }
+  
+  // If viewing forum content, require authentication
+  if ($op === 'view') {
+    if ($account->isAnonymous()) {
+      return AccessResult::forbidden('Forum access requires authentication.');
+    }
+    return AccessResult::allowed();
+  }
+  
+  return AccessResult::neutral();
+}
+
+/**
+ * Implements hook_preprocess_page().
+ * 
+ * Redirect anonymous users away from forum pages.
+ */
+function acwe_registration_preprocess_page(&$variables) {
+  $current_path = \Drupal::service('path.current')->getPath();
+  $account = \Drupal::currentUser();
+  
+  // If anonymous user is trying to access /forum
+  if ($account->isAnonymous() && str_starts_with($current_path, '/forum')) {
+    $response = new \Symfony\Component\HttpFoundation\RedirectResponse('/user/login?destination=' . urlencode($current_path));
+    $response->send();
+    exit;
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter() for user_register_form.
+ */
+function acwe_registration_form_user_register_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Just adjust weights - let the field widgets work naturally
+  if (isset($form['field_primary_section'])) {
+    $form['field_primary_section']['#weight'] = 5;
+  }
+
+  if (isset($form['field_member_status'])) {
+    $form['field_member_status']['#weight'] = 6;
+  }
+
+  // Add rehearsal keyword field
+  $form['rehearsal_keyword'] = [
+    '#type' => 'textfield',
+    '#title' => t('Rehearsal Keyword'),
+    '#required' => TRUE,
+    '#description' => t('Enter the keyword announced at rehearsals. Ask your section leader if you don\'t know it.'),
+    '#weight' => 10,
+  ];
+
+  // Add custom validation
+  $form['#validate'][] = 'acwe_registration_keyword_validate';
+  
+  // Add submit handler to set default member status
+  foreach (array_keys($form['actions']) as $action) {
+    if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
+      array_unshift($form['actions'][$action]['#submit'], 'acwe_registration_set_member_status');
+    }
+  }
+
+  // Set account to blocked by default (requires approval)
+  if (isset($form['account']['status'])) {
+    $form['account']['status']['#default_value'] = 0;
+  }
+}
+
+/**
+ * Submit handler to set default member status.
+ */
+function acwe_registration_set_member_status(&$form, FormStateInterface $form_state) {
+  // Set member status to active_season if not set
+  $member_status = $form_state->getValue('field_member_status');
+  if (empty($member_status) || !isset($member_status[0]['value'])) {
+    $form_state->setValue('field_member_status', [['value' => 'active_season']]);
+  }
+}
+
+/**
+ * Custom validation handler for rehearsal keyword.
+ */
+function acwe_registration_keyword_validate(&$form, FormStateInterface $form_state) {
+  $keyword = $form_state->getValue('rehearsal_keyword');
+  $correct_keyword = \Drupal::state()->get('acwe.rehearsal_keyword', '');
+  
+  if (empty($correct_keyword)) {
+    \Drupal::messenger()->addWarning(t('No rehearsal keyword has been set. Please contact the administrator.'));
+    return;
+  }
+  
+  // Case-insensitive comparison
+  if (strtolower(trim($keyword)) !== strtolower(trim($correct_keyword))) {
+    $form_state->setErrorByName('rehearsal_keyword', 
+      t('Incorrect keyword. Please check with your section leader or try again.'));
+  }
+}
+
+/**
+ * Helper function to get available sections.
+ */
+function _acwe_registration_get_sections() {
+  return [
+    '' => t('- Select -'),
+    'conductor' => t('Conductor'),
+    'flutes' => t('Flutes/Piccolos'),
+    'doublereeds' => t('Oboes/Bassoons/English Horns'),
+    'highclarinets' => t('Clarinets'),
+    'lowclarinets' => t('Bass Clarinets'),
+    'saxophones' => t('Saxophones'),
+    'horns' => t('French Horns'),
+    'trumpets' => t('Cornets/Trumpets'),
+    'trombones' => t('Trombones'),
+    'lowbrass' => t('Euphoniums/Tubas'),
+    'percussion' => t('Percussion'),
+  ];
+}
+
+/**
+ * Implements hook_user_insert().
+ */
+function acwe_registration_user_insert($account) {
+  // Only process if account is blocked (pending approval)
+  if (!$account->isActive()) {
+    // TODO: Send notification to approvers
+    \Drupal::logger('acwe_registration')->info('New registration pending approval: @name (@email)', [
+      '@name' => $account->getAccountName(),
+      '@email' => $account->getEmail(),
+    ]);
+  }
+}

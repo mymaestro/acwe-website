@@ -1,0 +1,14 @@
+uuid: 239b1cea-5c90-419a-a7b7-ae7ba8db90eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.members
+id: members-admin
+label: Admin
+weight: 100
+admin: true
+scope: individual
+global_role: null
+group_type: members
+permissions: {  }

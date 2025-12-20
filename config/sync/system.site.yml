@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: ijfbzDTN4CbE7Sr-6ubWzy_t1vH4OtU1doNCLssVz-4
+langcode: en
+uuid: a8d3039b-792f-445c-81ca-e0c717a273a5
+name: 'Austin Civic Wind Ensemble'
+mail: bandgeek@acwe.org
+slogan: 'In tune with Austin since 1975'
+page:
+  403: ''
+  404: /node/109
+  front: /upcoming
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: en
+mail_notification: bandgeek@acwe.org

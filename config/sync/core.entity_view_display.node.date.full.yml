@@ -1,0 +1,108 @@
+uuid: b97011b9-4c26-4b8f-8804-a70a0092e51d
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.date.body
+    - field.field.node.date.comment_node_date
+    - field.field.node.date.field_date
+    - field.field.node.date.field_event_type
+    - field.field.node.date.field_image
+    - field.field.node.date.field_image_media
+    - field.field.node.date.field_tags
+    - field.field.node.date.field_venue
+    - node.type.date
+  module:
+    - date_ical
+    - ds
+    - image
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: layout_twocol_section
+      library: layout_builder/twocol_section
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        column_widths: 50-50
+    regions:
+      first:
+        - field_image
+        - field_tags
+      second:
+        - field_venue
+        - field_date
+        - body
+id: node.date.full
+targetEntityType: node
+bundle: date
+mode: full
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: second
+  field_date:
+    type: date_ical
+    label: hidden
+    settings:
+      summary_field: title
+      description_field: body
+      location_field: field_venue
+      categories_field: field_event_type
+      organizer_field: uid
+      status_field: ''
+      url_field: ''
+      rrule: ''
+      rrule_field: ''
+      attendee_field: ''
+      alarm_field: ''
+      attach_field: ''
+      geo_field: ''
+      download_directly: true
+      disable_webcal: true
+      timezone_override: ''
+      format_type: long
+    third_party_settings: {  }
+    weight: 2
+    region: second
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: first
+  field_tags:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: first
+  field_venue:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: second
+hidden:
+  comment_node_date: true
+  field_event_type: true
+  field_image_media: true
+  links: true

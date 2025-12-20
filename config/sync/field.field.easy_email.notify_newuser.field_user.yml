@@ -1,0 +1,29 @@
+uuid: 80d3ab38-9b25-47d7-b421-eff0601af319
+langcode: en
+status: true
+dependencies:
+  config:
+    - easy_email.easy_email_type.notify_newuser
+    - field.storage.easy_email.field_user
+id: easy_email.notify_newuser.field_user
+field_name: field_user
+entity_type: easy_email
+bundle: notify_newuser
+label: User
+description: 'Represents information about a user'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    filter:
+      type: _none
+    include_anonymous: true
+field_type: entity_reference

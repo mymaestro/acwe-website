@@ -1,0 +1,28 @@
+uuid: ec91808d-dc4c-4f43-bd06-9fe579fc96e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_venue
+    - node.type.date
+    - taxonomy.vocabulary.venue
+id: node.date.field_venue
+field_name: field_venue
+entity_type: node
+bundle: date
+label: Venue
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    tid: '10'
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      venue: venue
+    sort:
+      field: _none
+field_type: entity_reference

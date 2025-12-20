@@ -1,0 +1,23 @@
+uuid: 78346c1a-5b41-4c6c-a4a6-c2c5a39a01d3
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:0a53999f-0551-44dc-af33-9cb0a9374e8c'
+  module:
+    - block_content
+  theme:
+    - olivero
+id: olivero_mailingaddress
+theme: olivero
+region: footer_bottom
+weight: 0
+provider: null
+plugin: 'block_content:0a53999f-0551-44dc-af33-9cb0a9374e8c'
+settings:
+  id: 'block_content:0a53999f-0551-44dc-af33-9cb0a9374e8c'
+  label: 'Mailing address'
+  label_display: '0'
+  provider: block_content
+  view_mode: full
+visibility: {  }

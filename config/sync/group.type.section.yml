@@ -1,0 +1,11 @@
+uuid: b0b79d6a-3fca-4cc0-a5f0-1161b78e4dba
+langcode: en
+status: true
+dependencies: {  }
+id: section
+label: Section
+description: 'Which section of the band to represent by the group.'
+new_revision: true
+creator_membership: true
+creator_wizard: true
+creator_roles: {  }

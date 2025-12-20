@@ -1,0 +1,39 @@
+uuid: 220cc4fc-dfb3-4788-83a5-144ba81ec570
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.profile.user_profile.field_first_name
+    - field.field.profile.user_profile.field_last_name
+    - profile.type.user_profile
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: profile.user_profile.default
+targetEntityType: profile
+bundle: user_profile
+mode: default
+content:
+  field_first_name:
+    type: string_textfield
+    weight: 26
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_last_name:
+    type: string_textfield
+    weight: 27
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  is_default: true

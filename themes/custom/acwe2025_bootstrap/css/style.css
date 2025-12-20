@@ -1,0 +1,436 @@
+/**
+ * @file
+ * ACWE 2025 Theme - Austin Civic Wind Ensemble Custom Styling
+ * Matching the clean, professional design of acwe.org
+ */
+
+/* Import Google Fonts for clean typography */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+/* ACWE Color Palette - Clean & Professional */
+:root {
+    --acwe-primary: #2c3e50;        /* Dark blue-gray */
+    --acwe-secondary: #34495e;      /* Medium blue-gray */
+    --acwe-accent: #3498db;         /* Clean blue */
+    --acwe-light: #ecf0f1;          /* Very light gray */
+    --acwe-white: #ffffff;
+    --acwe-text: #2c3e50;
+    --acwe-muted: #7f8c8d;
+    --acwe-border: #bdc3c7;
+}
+
+/* Global Typography - Clean Sans-serif like ACWE.org */
+body {
+    font-family: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--acwe-text);
+    background-color: var(--acwe-white);
+}
+
+/* Sticky Footer Setup - Make footer stick to bottom on short pages */
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+}
+
+#page-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#page {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-container,
+#main-content-wrapper {
+    flex: 1 0 auto;
+    min-height: 0;
+}
+
+.site-footer {
+    flex-shrink: 0;
+    margin-top: auto;
+}
+
+/* Clean Header Design */
+.region-header {
+    background-color: var(--acwe-white);
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--acwe-border);
+    box-shadow: none;
+}
+
+/* Site Logo */
+.site-branding img,
+.navbar-brand img,
+.site-logo img {
+    height: 36px;
+    width: auto;
+    max-width: 100%;
+}
+
+/* Site Branding */
+.navbar-brand,
+.site-name {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: var(--acwe-primary) !important;
+    text-decoration: none;
+}
+
+/* Clean Navigation - Minimal like ACWE.org */
+.navbar {
+    border: none;
+    box-shadow: none;
+    padding: 0.5rem 0;
+}
+
+.navbar-nav .nav-link {
+    color: var(--acwe-text) !important;
+    font-weight: 400;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+    color: var(--acwe-accent) !important;
+}
+
+/* Content Area - Clean & Spacious */
+.main-container {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    /* Let Bootstrap handle container width */
+}
+
+/* Clean Typography Hierarchy */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    color: var(--acwe-primary);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+}
+
+.page-title {
+    color: var(--acwe-primary);
+    border-bottom: 2px solid var(--acwe-accent);
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Clean Button Styling */
+.btn-primary {
+    background-color: var(--acwe-accent);
+    border-color: var(--acwe-accent);
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--acwe-primary);
+    border-color: var(--acwe-primary);
+}
+
+
+/* Layout Builder & 3-Column Styling */
+.layout-builder__section {
+    margin-bottom: 3rem;
+}
+
+.layout-builder__region {
+    min-height: 50px;
+    padding: 1rem;
+}
+
+/* 3-Column Layout Enhancements */
+.layout--barrio-col3-equal .layout__region {
+    background-color: var(--acwe-white);
+    border: none;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: box-shadow 0.3s ease;
+}
+
+.layout--barrio-col3-equal .layout__region:hover {
+    box-shadow: 0 4px 12px rgba(44, 62, 80, 0.1);
+}
+
+.layout--barrio-col3-equal .layout__region h2,
+.layout--barrio-col3-equal .layout__region h3 {
+    color: var(--acwe-primary);
+    border-bottom: none;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Front Page Specific Styling */
+.front .layout--barrio-col3-equal {
+    margin-top: 2rem;
+}
+
+.front .layout__region--first,
+.front .layout__region--second, 
+.front .layout__region--third {
+    text-align: center;
+}
+
+.front .layout__region h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Column Content Styling */
+.layout__region .block h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.layout__region .block {
+    margin-bottom: 1.5rem;
+}
+
+.layout__region .views-row {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--acwe-light);
+}
+
+.layout__region .views-row:last-child {
+    border-bottom: none;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .main-container {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        padding: 0 1rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+
+    .layout--barrio-col3-equal .layout__region {
+        margin-bottom: 2rem;
+        padding: 1.5rem;
+    }
+    
+    .front .layout__region h2 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Remove borders from Page nodes */
+.node--type-page {
+    border: none !important;
+}
+
+.node--type-page .card,
+.node--type-page .card-body {
+    border: none !important;
+}
+
+/* Remove border from card layout */
+.card-img-top,
+.card {
+    border: none !important;
+}
+
+/* Footer Styling */
+.site-footer {
+    background: #343a40 !important;
+    color: #ffffff;
+    padding: 0px 0 !important;
+}
+
+.site-footer a {
+    color: #adb5bd;
+    transition: color 0.3s ease;
+}
+
+.site-footer .container,
+.site-footer .container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.site-footer__top {
+  display: flex;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.site-footer__bottom {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.site-footer .region {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 10px;
+}
+
+/* Target specific footer regions */
+.region-footer-first,
+.region-footer-second,
+.region-footer-third,
+.region-footer-fourth,
+.region-footer-fifth {
+    padding: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* Remove padding/margin from blocks inside footer regions */
+.site-footer .block {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* Remove extra spacing from block content */
+.site-footer .block__content {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* Remove spacing from menus in footer */
+.site-footer .menu {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.site-footer .menu-item {
+    margin-bottom: 0 !important;
+}
+
+.site-footer a:hover {
+    color: #ffffff;
+}
+
+.site-footer .region h2,
+.site-footer .region h3 {
+    color: #ffffff;
+    border-bottom: none;
+    padding-bottom: 0.5rem;
+}
+
+/* Remove all footer borders */
+.site-footer .block,
+.site-footer .region,
+.site-footer__top,
+.site-footer__bottom,
+.site-footer h2,
+.site-footer h3,
+.site-footer .menu,
+.site-footer .menu-item {
+    border: none !important;
+}
+
+/* ============================================
+   Views Table Styling - Fix contrast issues
+   ============================================ */
+
+/* General table improvements */
+.views-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+/* Table headers - Fix white text on light gray */
+.views-table thead th {
+    background-color: var(--acwe-primary) !important;
+    color: var(--acwe-white) !important;
+    font-weight: 600;
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 2px solid var(--acwe-secondary);
+}
+
+/* Sortable column headers */
+.views-table thead th a {
+    color: var(--acwe-white) !important;
+    text-decoration: none;
+}
+
+.views-table thead th a:hover {
+    color: var(--acwe-light) !important;
+}
+
+/* Table body */
+.views-table tbody td {
+    padding: 10px 15px;
+    color: var(--acwe-text);
+    border-bottom: 1px solid var(--acwe-border);
+}
+
+/* Alternating row colors */
+.views-table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.views-table tbody tr:hover {
+    background-color: var(--acwe-light);
+}
+
+/* Exposed filters styling */
+.views-exposed-form {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border: 1px solid var(--acwe-border);
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.views-exposed-form label {
+    font-weight: 600;
+    color: var(--acwe-text);
+    margin-bottom: 5px;
+    display: block;
+}
+
+.views-exposed-form .form-control,
+.views-exposed-form select {
+    border: 1px solid var(--acwe-border);
+    border-radius: 4px;
+    padding: 8px 12px;
+}
+
+.views-exposed-form .btn {
+    background-color: var(--acwe-accent);
+    color: var(--acwe-white);
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.views-exposed-form .btn:hover {
+    background-color: var(--acwe-secondary);
+}

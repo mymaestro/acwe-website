@@ -1,0 +1,21 @@
+uuid: 6ce41f79-b6bb-4497-98ab-f62698c109c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_primary_section
+  module:
+    - options
+    - user
+id: user.user.field_primary_section
+field_name: field_primary_section
+entity_type: user
+bundle: user
+label: 'Primary Instrument/Section'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

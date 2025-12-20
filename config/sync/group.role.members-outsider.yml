@@ -1,0 +1,15 @@
+uuid: bee9149f-6cde-4daa-bf20-3ca0ccd87e62
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.members
+    - user.role.authenticated
+id: members-outsider
+label: Outsider
+weight: -101
+admin: false
+scope: outsider
+global_role: authenticated
+group_type: members
+permissions: {  }

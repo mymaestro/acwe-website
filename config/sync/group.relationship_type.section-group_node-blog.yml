@@ -1,0 +1,17 @@
+uuid: b831215f-6c77-406f-9660-22fe4b7ef47f
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.section
+    - node.type.blog
+  module:
+    - gnode
+    - node
+id: section-group_node-blog
+group_type: section
+content_plugin: 'group_node:blog'
+plugin_config:
+  group_cardinality: 0
+  entity_cardinality: 1
+  use_creation_wizard: false

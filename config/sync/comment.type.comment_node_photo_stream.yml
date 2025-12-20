@@ -1,0 +1,8 @@
+uuid: ff9db625-b64e-4763-93b9-8db730f9648e
+langcode: en
+status: true
+dependencies: {  }
+id: comment_node_photo_stream
+label: 'Background images comment'
+target_entity_type_id: node
+description: null

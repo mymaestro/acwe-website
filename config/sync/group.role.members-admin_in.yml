@@ -1,0 +1,15 @@
+uuid: 7f0a4559-0afb-400c-88fb-8c64f5a5fa2d
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.members
+    - user.role.administrator
+id: members-admin_in
+label: Administrator
+weight: 102
+admin: true
+scope: insider
+global_role: administrator
+group_type: members
+permissions: {  }

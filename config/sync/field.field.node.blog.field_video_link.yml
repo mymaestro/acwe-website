@@ -1,0 +1,35 @@
+uuid: 7835fe7b-da00-4f00-be76-9b89d0a7637e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_video_link
+    - media.type.audio
+    - media.type.image
+    - media.type.remote_video
+    - media.type.video
+    - node.type.blog
+id: node.blog.field_video_link
+field_name: field_video_link
+entity_type: node
+bundle: blog
+label: Multimedia
+description: 'Here you can upload a media object, or reference one that already exists.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      audio: audio
+      image: image
+      remote_video: remote_video
+      video: video
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: audio
+field_type: entity_reference

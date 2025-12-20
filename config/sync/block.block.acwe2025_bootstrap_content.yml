@@ -1,0 +1,22 @@
+uuid: 32e3dc17-ac4c-478a-bbcf-f6a5496ec720
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - acwe2025_bootstrap
+_core:
+  default_config_hash: GuQlH3j65O5SXgAliLjf1Ben7XBU6qxvW7xXUo6q0rk
+id: acwe2025_bootstrap_content
+theme: acwe2025_bootstrap
+region: content
+weight: -4
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

@@ -1,0 +1,22 @@
+uuid: 1fe3a1ae-6ff8-4011-a948-0b8b9e21e6f1
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - acwe2025_bootstrap
+_core:
+  default_config_hash: b6CHwczHyuqKRuf-Oi4zY6q-9HCsLyWRGkk8-reVCfk
+id: acwe2025_bootstrap_help
+theme: acwe2025_bootstrap
+region: highlighted
+weight: -6
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

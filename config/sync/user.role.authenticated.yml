@@ -1,0 +1,50 @@
+uuid: 1c0ac1d1-1fb7-44e8-a529-c8d4b5f7c17a
+langcode: en
+status: true
+dependencies:
+  config:
+    - dashboard.dashboard.everybody
+    - dashboard.dashboard.section_dashboard
+    - media.type.document
+    - media.type.remote_video
+    - media.type.video
+    - node.type.date
+    - node.type.forum
+    - node.type.front_page_announcement
+  module:
+    - antibot
+    - comment
+    - contact
+    - dashboard
+    - media
+    - node
+    - paragraphs_type_permissions
+    - search
+    - system
+_core:
+  default_config_hash: cFrlqjtkTfvY3RGccjJkPf1SGIfJ942IrxTLWAO4mgA
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access site-wide contact form'
+  - 'create forum content'
+  - 'delete own forum content'
+  - 'edit own document media'
+  - 'edit own forum content'
+  - 'edit own front_page_announcement content'
+  - 'edit own remote_video media'
+  - 'edit own video media'
+  - 'post comments'
+  - 'search content'
+  - 'skip antibot'
+  - 'use advanced search'
+  - 'view date revisions'
+  - 'view everybody dashboard'
+  - 'view media'
+  - 'view own unpublished media'
+  - 'view paragraph content carousel_item'
+  - 'view section_dashboard dashboard'

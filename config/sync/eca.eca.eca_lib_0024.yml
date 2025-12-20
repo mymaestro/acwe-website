@@ -1,0 +1,93 @@
+uuid: 6b080bcf-2a83-41e5-9469-eb4d7824ebba
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.user_admin_people
+  module:
+    - eca_base
+    - eca_content
+    - eca_user
+    - eca_views
+    - modeler_api
+third_party_settings:
+  modeler_api:
+    modeler_id: bpmn_io
+    data: 'hash:e08998455ae44517fc39d1a9e755153b'
+    label: 'Send email to users of a given role'
+    documentation: |-
+      This model sends an email to all users of a certain role. It contains a view with a contextual filter to limit the list of users to those of the given role.
+
+      The creation of this model was recorded with lots of additional explanations (e.g. how to use an existing model as a starting point) and [can be watched here](https://tube.tchncs.de/w/8dZuXYZHmuDTutddrTZUfE).
+    tags:
+      - simple
+      - views
+      - loop
+      - 'custom event'
+      - 'switch user'
+      - email
+    version: v1
+_core:
+  default_config_hash: N7ob6cq61y3EHbAUFsqUHABBIMAI6rwShX2ZQ28pyCE
+id: eca_lib_0024
+weight: 0
+events:
+  eca_base__eca_custom_1:
+    plugin: 'eca_base:eca_custom'
+    label: 'Custom event email'
+    configuration:
+      event_id: email
+    successors:
+      -
+        id: eca_switch_account_0ha3xin
+        condition: ''
+  content_entity__custom_1asjw3k:
+    plugin: 'content_entity:custom'
+    label: X1
+    configuration:
+      event_id: x1
+    successors:
+      -
+        id: action_send_email_action_0xpew34
+        condition: ''
+conditions: {  }
+gateways: {  }
+actions:
+  eca_views_query_08o1wo5:
+    label: 'List users'
+    plugin: eca_views_query
+    configuration:
+      token_name: userlist
+      view_id: user_admin_people
+      display_id: attachment_1
+      arguments: registration_approver
+    successors:
+      -
+        id: eca_trigger_content_entity_custom_event_105ssdc
+        condition: ''
+  eca_switch_account_0ha3xin:
+    label: 'Switch user'
+    plugin: eca_switch_account
+    configuration:
+      user_id: '1'
+    successors:
+      -
+        id: eca_views_query_08o1wo5
+        condition: ''
+  eca_trigger_content_entity_custom_event_105ssdc:
+    label: 'Trigger X1'
+    plugin: eca_trigger_content_entity_custom_event
+    configuration:
+      event_id: x1
+      tokens: ''
+      object: userlist
+    successors: {  }
+  action_send_email_action_0xpew34:
+    label: Email
+    plugin: action_send_email_action
+    configuration:
+      recipient: '[entity:mail]'
+      subject: 'This email comes from ECA'
+      message: 'Hello [entity:name]'
+      replace_tokens: true
+    successors: {  }

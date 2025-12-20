@@ -1,0 +1,15 @@
+uuid: a9685d17-881c-49de-a277-5cfc9913f4a5
+langcode: en
+status: true
+dependencies: {  }
+name: galleryformatter_slide
+label: galleryformatter_slide
+effects:
+  c670e7a2-ac28-4468-9f45-3a7abd25a3a8:
+    uuid: c670e7a2-ac28-4468-9f45-3a7abd25a3a8
+    id: image_scale_and_crop
+    weight: 0
+    data:
+      width: 500
+      height: 312
+      anchor: center-center

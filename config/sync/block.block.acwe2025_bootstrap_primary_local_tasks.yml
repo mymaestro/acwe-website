@@ -1,0 +1,22 @@
+uuid: 31268eeb-0182-417f-b0f7-3784271d9d4e
+langcode: en
+status: true
+dependencies:
+  theme:
+    - acwe2025_bootstrap
+_core:
+  default_config_hash: IsKUlBAi-gl90iZ3w0OI3XZvSYDrtxg4nF1aDhfLWIA
+id: acwe2025_bootstrap_primary_local_tasks
+theme: acwe2025_bootstrap
+region: content
+weight: -6
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

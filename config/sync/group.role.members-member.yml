@@ -1,0 +1,17 @@
+uuid: 5183dd18-fcc8-4514-ba9e-c0705268b841
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.members
+    - user.role.authenticated
+id: members-member
+label: Member
+weight: -100
+admin: false
+scope: insider
+global_role: authenticated
+group_type: members
+permissions:
+  - 'update own group_membership relationship'
+  - 'view group'

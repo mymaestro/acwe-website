@@ -1,0 +1,7 @@
+uuid: c66fa896-098e-4f82-b87d-1625d12bdfb0
+langcode: en
+status: true
+dependencies: {  }
+name: slideshow
+label: Slideshow
+effects: {  }

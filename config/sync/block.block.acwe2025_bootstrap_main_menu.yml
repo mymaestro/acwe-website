@@ -1,0 +1,27 @@
+uuid: a9f34ca9-a8f4-4dd6-9113-258e65051d18
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - acwe2025_bootstrap
+_core:
+  default_config_hash: Vrn8CVbuNQkElxVQ1UJS57jzA7WHlZ_6EJMfWkspfr0
+id: acwe2025_bootstrap_main_menu
+theme: acwe2025_bootstrap
+region: primary_menu
+weight: -8
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 2
+  expand_all_items: true
+visibility: {  }

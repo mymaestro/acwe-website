@@ -1,0 +1,32 @@
+uuid: 0e289920-f719-4141-a1c0-a9aea7e85ef9
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools_block
+  theme:
+    - olivero
+id: olivero_corporatelogo
+theme: olivero
+region: sidebar
+weight: 0
+provider: null
+plugin: 'entity_field:node:field_corporate_logo'
+settings:
+  id: 'entity_field:node:field_corporate_logo'
+  label: 'Corporate logo'
+  label_display: '0'
+  provider: ctools_block
+  context_mapping:
+    entity: '@node.node_route_context:node'
+  formatter:
+    type: responsive_image
+    weight: 0
+    label: hidden
+    settings:
+      responsive_image_style: narrow
+      image_link: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+visibility: {  }

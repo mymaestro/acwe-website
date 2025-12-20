@@ -1,0 +1,15 @@
+uuid: 290b6b5d-1ec1-40b9-b67c-d2a648676c7f
+langcode: en
+status: true
+dependencies: {  }
+name: section_home
+label: section_home
+triggers:
+  login: login
+destination_path: 'internal:/admin/dashboard/section_dashboard'
+pages_type: 0
+pages: ''
+language: ''
+roles: {  }
+weight: -9
+enabled: true

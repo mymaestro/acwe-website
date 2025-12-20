@@ -1,0 +1,43 @@
+uuid: 768ad38a-f39f-4fd3-8338-63ecdb92c77a
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.section
+  module:
+    - field_layout
+    - layout_discovery
+    - path
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: group.section.default
+targetEntityType: group
+bundle: section
+mode: default
+content:
+  label:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 120
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  uid: true

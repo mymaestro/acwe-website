@@ -1,0 +1,32 @@
+uuid: 9435874f-5db2-4408-954a-c23680047b7a
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools_block
+  theme:
+    - acwe2025_bootstrap
+id: acwe2025_bootstrap_corporatelogo
+theme: acwe2025_bootstrap
+region: footer_first
+weight: -8
+provider: null
+plugin: 'entity_field:node:field_corporate_logo'
+settings:
+  id: 'entity_field:node:field_corporate_logo'
+  label: 'Corporate logo'
+  label_display: visible
+  provider: ctools_block
+  context_mapping:
+    entity: '@node.node_route_context:node'
+  formatter:
+    type: image
+    weight: 0
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+visibility: {  }

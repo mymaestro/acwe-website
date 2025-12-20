@@ -1,0 +1,10 @@
+uuid: 6051bdb9-5804-4d6e-a406-de423aa35102
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Q2Ra3jfoIVk0f3SjxJX61byRQFVBAbpzYDQOiY-kno8
+id: main
+label: 'Main menu'
+description: "The <em>Main</em> menu shows stops on the musical journey. It's displayed on top."
+locked: true

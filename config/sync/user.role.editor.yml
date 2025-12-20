@@ -1,0 +1,103 @@
+uuid: c000405f-32b8-48ff-95de-d320f74213aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+    - filter.format.filtered_html
+    - filter.format.full_html
+    - node.type.article
+    - node.type.blog
+    - node.type.date
+    - node.type.forum
+    - node.type.front_page_announcement
+    - node.type.page
+    - node.type.sponsor
+  module:
+    - comment
+    - contact
+    - content_moderation
+    - contextual
+    - easy_email
+    - entity_reference_revisions
+    - filter
+    - help
+    - node
+    - path
+    - pathauto
+    - search
+    - shortcut
+    - system
+id: editor
+label: Editor
+weight: 5
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access comments'
+  - 'access content'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access help pages'
+  - 'access site in maintenance mode'
+  - 'access the email types overview'
+  - 'access user profiles'
+  - 'administer comments'
+  - 'administer contact forms'
+  - 'administer nodes'
+  - 'administer pathauto'
+  - 'administer search'
+  - 'administer shortcuts'
+  - 'administer url aliases'
+  - 'cancel account'
+  - 'change own username'
+  - 'create article content'
+  - 'create blog content'
+  - 'create date content'
+  - 'create front_page_announcement content'
+  - 'create page content'
+  - 'create sponsor content'
+  - 'create url aliases'
+  - 'customize shortcut links'
+  - 'delete any article content'
+  - 'delete any blog content'
+  - 'delete any date content'
+  - 'delete any front_page_announcement content'
+  - 'delete any page content'
+  - 'delete any sponsor content'
+  - 'delete orphan revisions'
+  - 'delete own article content'
+  - 'delete own blog content'
+  - 'delete own date content'
+  - 'delete own front_page_announcement content'
+  - 'delete own page content'
+  - 'delete own sponsor content'
+  - 'edit any article content'
+  - 'edit any blog content'
+  - 'edit any date content'
+  - 'edit any forum content'
+  - 'edit any front_page_announcement content'
+  - 'edit any page content'
+  - 'edit any sponsor content'
+  - 'edit own article content'
+  - 'edit own blog content'
+  - 'edit own comments'
+  - 'edit own date content'
+  - 'edit own front_page_announcement content'
+  - 'edit own page content'
+  - 'edit own sponsor content'
+  - 'notify of path changes'
+  - 'post comments'
+  - 'rebuild node access permissions'
+  - 'search content'
+  - 'select account cancellation method'
+  - 'skip comment approval'
+  - 'switch shortcut sets'
+  - 'use advanced search'
+  - 'use text format basic_html'
+  - 'use text format filtered_html'
+  - 'use text format full_html'
+  - 'view any unpublished content'
+  - 'view latest version'
+  - 'view own unpublished content'
+  - 'view the administration theme'

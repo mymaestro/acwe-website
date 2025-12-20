@@ -1,0 +1,77 @@
+uuid: e2154bf0-cb4f-4e1e-9436-b91af9d9e0d3
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.date.body
+    - field.field.node.date.comment_node_date
+    - field.field.node.date.field_date
+    - field.field.node.date.field_event_type
+    - field.field.node.date.field_image
+    - field.field.node.date.field_image_media
+    - field.field.node.date.field_tags
+    - field.field.node.date.field_venue
+    - image.style.medium
+    - node.type.date
+  module:
+    - datetime_range
+    - image
+    - text
+    - user
+id: node.date.teaser
+targetEntityType: node
+bundle: date
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_date:
+    type: daterange_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: medium
+      from_to: start_date
+      separator: '-'
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: content
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_venue:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  comment_node_date: true
+  field_event_type: true
+  field_image_media: true
+  links: true

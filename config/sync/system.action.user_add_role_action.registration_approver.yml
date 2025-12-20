@@ -1,0 +1,14 @@
+uuid: 2e6e38bb-3e69-4512-8678-23c834996711
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.registration_approver
+  module:
+    - user
+id: user_add_role_action.registration_approver
+label: 'Add the Registration approver role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: registration_approver

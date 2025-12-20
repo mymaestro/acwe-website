@@ -1,0 +1,23 @@
+uuid: cdb66236-d64e-439f-87af-c1ee8b99fba8
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:a1c41bcf-960f-4e21-91e6-6dd5646e232a'
+  module:
+    - block_content
+  theme:
+    - olivero
+id: olivero_fundedby
+theme: olivero
+region: footer_bottom
+weight: -8
+provider: null
+plugin: 'block_content:a1c41bcf-960f-4e21-91e6-6dd5646e232a'
+settings:
+  id: 'block_content:a1c41bcf-960f-4e21-91e6-6dd5646e232a'
+  label: 'Funded by'
+  label_display: '0'
+  provider: block_content
+  view_mode: full
+visibility: {  }

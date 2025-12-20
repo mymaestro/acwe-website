@@ -1,0 +1,43 @@
+uuid: b1ec44a7-33e5-43b8-921a-c7ec38a1830b
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_event_calendar
+    - field.field.comment.comment_node_event_calendar.comment_body
+  module:
+    - field_layout
+    - layout_discovery
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: comment.comment_node_event_calendar.default
+targetEntityType: comment
+bundle: comment_node_event_calendar
+mode: default
+content:
+  author:
+    weight: -2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  comment_body:
+    type: text_textarea
+    weight: 0
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  subject:
+    type: string_textfield
+    weight: 10
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

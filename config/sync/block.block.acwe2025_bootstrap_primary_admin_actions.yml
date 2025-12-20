@@ -1,0 +1,20 @@
+uuid: 83489deb-87ef-4b1a-b98a-d52d7b167648
+langcode: en
+status: true
+dependencies:
+  theme:
+    - acwe2025_bootstrap
+_core:
+  default_config_hash: MY-b6RFbUcofefyaeI8uMqaPh2bJOasn2y1bvGVF4dw
+id: acwe2025_bootstrap_primary_admin_actions
+theme: acwe2025_bootstrap
+region: content
+weight: -7
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

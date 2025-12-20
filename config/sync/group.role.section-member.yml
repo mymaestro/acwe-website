@@ -1,0 +1,20 @@
+uuid: d098e85f-cae3-47e7-9c3b-374e0d6da160
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.section
+    - user.role.authenticated
+id: section-member
+label: Member
+weight: -100
+admin: false
+scope: insider
+global_role: authenticated
+group_type: section
+permissions:
+  - 'access group_node overview'
+  - 'view group'
+  - 'view group_node:blog entity'
+  - 'view group_node:forum entity'
+  - 'view group_node:multimedia entity'

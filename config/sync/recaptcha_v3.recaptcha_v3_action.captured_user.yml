@@ -1,0 +1,8 @@
+uuid: e6c1e63f-9c9c-4d2a-8a19-b9ca86616aa0
+langcode: en
+status: true
+dependencies: {  }
+id: captured_user
+label: 'Captured user'
+threshold: 0.9
+challenge: default

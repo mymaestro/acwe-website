@@ -1,0 +1,43 @@
+uuid: 7d70f28e-52c0-4b94-9540-f00899e04821
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_front_page_announ
+    - field.field.comment.comment_node_front_page_announ.comment_body
+  module:
+    - field_layout
+    - layout_discovery
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: comment.comment_node_front_page_announ.default
+targetEntityType: comment
+bundle: comment_node_front_page_announ
+mode: default
+content:
+  author:
+    weight: -2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  comment_body:
+    type: text_textarea
+    weight: 0
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  subject:
+    type: string_textfield
+    weight: 10
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

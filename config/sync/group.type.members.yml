@@ -1,0 +1,11 @@
+uuid: affd0652-89d0-4dba-a4f1-3295a1e1285c
+langcode: en
+status: true
+dependencies: {  }
+id: members
+label: Members
+description: 'Members area group just for controlling access to content for authenticated users.'
+new_revision: true
+creator_membership: true
+creator_wizard: true
+creator_roles: {  }

@@ -1,0 +1,33 @@
+uuid: 1ece1964-7d0f-4f41-b700-6292d9b27d5f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.comment_node_sponsor
+    - node.type.sponsor
+  module:
+    - comment
+id: node.sponsor.comment_node_sponsor
+field_name: comment_node_sponsor
+entity_type: node
+bundle: sponsor
+label: Comments
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    status: 1
+    cid: 0
+    last_comment_timestamp: 0
+    last_comment_name: null
+    last_comment_uid: 0
+    comment_count: 0
+default_value_callback: ''
+settings:
+  default_mode: 1
+  per_page: 50
+  anonymous: 0
+  form_location: false
+  preview: 1
+field_type: comment

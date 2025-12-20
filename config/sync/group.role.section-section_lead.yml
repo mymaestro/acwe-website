@@ -1,0 +1,44 @@
+uuid: 24cdfd5c-7f3f-480d-a83f-a9f47427dd1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.section
+    - user.role.registration_approver
+id: section-section_lead
+label: 'Section lead'
+weight: 103
+admin: false
+scope: insider
+global_role: registration_approver
+group_type: section
+permissions:
+  - 'access content overview'
+  - 'access group_node overview'
+  - 'administer members'
+  - 'create group_node:blog entity'
+  - 'create group_node:forum entity'
+  - 'create group_node:multimedia entity'
+  - 'delete any group_node:blog entity'
+  - 'delete any group_node:forum entity'
+  - 'delete any group_node:multimedia entity'
+  - 'delete own group_node:blog entity'
+  - 'delete own group_node:forum entity'
+  - 'delete own group_node:multimedia entity'
+  - 'update any group_node:blog entity'
+  - 'update any group_node:forum entity'
+  - 'update any group_node:multimedia entity'
+  - 'update own group_node:blog entity'
+  - 'update own group_node:forum entity'
+  - 'update own group_node:multimedia entity'
+  - 'view group'
+  - 'view group_membership relationship'
+  - 'view group_node:blog entity'
+  - 'view group_node:forum entity'
+  - 'view group_node:multimedia entity'
+  - 'view own unpublished group_node:blog entity'
+  - 'view own unpublished group_node:forum entity'
+  - 'view own unpublished group_node:multimedia entity'
+  - 'view unpublished group_node:blog entity'
+  - 'view unpublished group_node:forum entity'
+  - 'view unpublished group_node:multimedia entity'

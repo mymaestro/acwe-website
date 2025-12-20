@@ -1,0 +1,112 @@
+uuid: 1107aa21-dc40-470c-8fb8-928991fd800b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.photo_stream.body
+    - field.field.node.photo_stream.comment_node_photo_stream
+    - field.field.node.photo_stream.field_photostream_images
+    - image.style.wide
+    - node.type.photo_stream
+  module:
+    - comment
+    - ds
+    - field_layout
+    - image
+    - path
+    - text
+third_party_settings:
+  field_layout:
+    id: ds_2col
+    settings:
+      label: ''
+      wrappers:
+        left: div
+        right: div
+      outer_wrapper: div
+      attributes: ''
+      link_attribute: ''
+      link_custom: ''
+      classes:
+        layout_class: {  }
+id: node.photo_stream.default
+targetEntityType: node
+bundle: photo_stream
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 121
+    region: left
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  comment_node_photo_stream:
+    type: comment_default
+    weight: 20
+    region: left
+    settings: {  }
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: left
+    settings: {  }
+    third_party_settings: {  }
+  field_photostream_images:
+    type: image_image
+    weight: 1
+    region: left
+    settings:
+      progress_indicator: throbber
+      preview_image_style: wide
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: left
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 15
+    region: left
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 120
+    region: left
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 16
+    region: left
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: left
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: left
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,8 @@
+name: 'ACWE Registration'
+type: module
+description: 'Custom registration workflow with keyword verification and approval system for Austin Civic Wind Ensemble'
+package: 'ACWE Custom'
+core_version_requirement: ^11
+dependencies:
+  - drupal:user
+  - group:group

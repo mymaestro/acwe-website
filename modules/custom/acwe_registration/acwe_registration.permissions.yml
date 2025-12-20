@@ -1,0 +1,8 @@
+administer acwe registration:
+  title: 'Administer ACWE Registration'
+  description: 'Configure registration settings including the rehearsal keyword.'
+  restrict access: true
+
+manage acwe registration approvals:
+  title: 'Manage ACWE Registration Approvals'
+  description: 'Approve or deny pending user registrations.'

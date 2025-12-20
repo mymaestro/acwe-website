@@ -1,0 +1,9 @@
+uuid: b9ef2ebd-1436-461d-bee2-10ac1ca6a587
+langcode: en
+status: true
+dependencies: {  }
+name: Venue
+vid: venue
+description: 'Places where gatherings are held'
+weight: 0
+new_revision: false

@@ -1,0 +1,35 @@
+uuid: cfabf948-ab37-47c7-af16-3b5ef8960326
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.sponsor.body
+    - field.field.node.sponsor.comment_node_sponsor
+    - field.field.node.sponsor.field_corporate_logo
+    - field.field.node.sponsor.field_tags
+    - node.type.sponsor
+  module:
+    - user
+id: node.sponsor.full
+targetEntityType: node
+bundle: sponsor
+mode: full
+content:
+  field_tags:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  body: true
+  comment_node_sponsor: true
+  field_corporate_logo: true

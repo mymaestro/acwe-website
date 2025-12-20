@@ -1,0 +1,18 @@
+uuid: dac2c2c2-7230-4c13-b860-57ecd8d1f1fd
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Event
+type: date
+description: 'Events with a specific starting date, and optional starting time, ending date, and ending time, have this type.'
+help: null
+new_revision: false
+preview_mode: 1
+display_submitted: false

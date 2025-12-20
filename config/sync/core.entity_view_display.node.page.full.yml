@@ -1,0 +1,160 @@
+uuid: 5470e578-905a-4712-be8e-6d7f6110220a
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_display.comment.comment_node_page.default
+    - core.entity_view_mode.node.full
+    - field.field.node.page.body
+    - field.field.node.page.comment_node_page
+    - field.field.node.page.field_image_media
+    - field.field.node.page.field_img
+    - field.field.node.page.field_tags
+    - field.field.node.page.layout_builder__layout
+    - image.style.large
+    - node.type.page
+  module:
+    - comment
+    - ds
+    - field_layout
+    - image
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: ds_2col_fluid
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          wrappers:
+            left: div
+            right: div
+          outer_wrapper: div
+          attributes: ''
+          link_attribute: ''
+          link_custom: ''
+          classes:
+            layout_class: {  }
+        components:
+          e8c4899b-a9b2-4028-a393-df52d8c86d3f:
+            uuid: e8c4899b-a9b2-4028-a393-df52d8c86d3f
+            region: left
+            configuration:
+              id: 'field_block:node:page:field_img'
+              label: Image
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: large
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          661780b6-d33f-4568-a4d7-2439a065f6a4:
+            uuid: 661780b6-d33f-4568-a4d7-2439a065f6a4
+            region: right
+            configuration:
+              id: 'field_block:node:page:body'
+              label: Body
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          3324ca20-df9c-4c66-9939-dd42d02d0aa4:
+            uuid: 3324ca20-df9c-4c66-9939-dd42d02d0aa4
+            region: left
+            configuration:
+              id: 'field_block:node:page:field_img'
+              label: Image
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: responsive_image
+                label: above
+                settings:
+                  responsive_image_style: wide
+                  image_link: ''
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+_core:
+  default_config_hash: M_Y8L5tfmhx7DR143E05YyZSpvgil6VFvqcfBWykalg
+id: node.page.full
+targetEntityType: node
+bundle: page
+mode: full
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  comment_node_page:
+    type: comment_default
+    label: hidden
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 20
+    region: content
+  field_img:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: large
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+hidden:
+  field_image_media: true
+  layout_builder__layout: true

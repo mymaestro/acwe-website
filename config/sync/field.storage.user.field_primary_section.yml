@@ -1,0 +1,54 @@
+uuid: 8ffdbf69-d07c-49d3-a815-52bf3920875d
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - user
+id: user.field_primary_section
+field_name: field_primary_section
+entity_type: user
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: conductor
+      label: Conductor
+    -
+      value: flutes
+      label: Flutes/Piccolos
+    -
+      value: doublereeds
+      label: 'Oboes/Bassoons/English Horns'
+    -
+      value: highclarinets
+      label: Clarinets
+    -
+      value: lowclarinets
+      label: 'Bass Clarinets'
+    -
+      value: saxophones
+      label: Saxophones
+    -
+      value: horns
+      label: 'French Horns'
+    -
+      value: trumpets
+      label: Cornets/Trumpets
+    -
+      value: trombones
+      label: Trombones
+    -
+      value: lowbrass
+      label: Euphoniums/Tubas
+    -
+      value: percussion
+      label: Percussion
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

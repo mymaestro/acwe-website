@@ -1,0 +1,16 @@
+uuid: 246442e3-87c4-400d-b1b9-457df59cd072
+langcode: en
+status: true
+dependencies: {  }
+name: system_admin
+label: system_admin
+triggers:
+  login: login
+destination_path: 'internal:/'
+pages_type: 0
+pages: ''
+language: ''
+roles:
+  administrator: administrator
+weight: -10
+enabled: true

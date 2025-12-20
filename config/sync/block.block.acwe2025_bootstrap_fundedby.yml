@@ -1,0 +1,23 @@
+uuid: d0c4fd80-d7ce-4aa7-a1e6-f569f2d3c275
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:a1c41bcf-960f-4e21-91e6-6dd5646e232a'
+  module:
+    - block_content
+  theme:
+    - acwe2025_bootstrap
+id: acwe2025_bootstrap_fundedby
+theme: acwe2025_bootstrap
+region: footer_third
+weight: -8
+provider: null
+plugin: 'block_content:a1c41bcf-960f-4e21-91e6-6dd5646e232a'
+settings:
+  id: 'block_content:a1c41bcf-960f-4e21-91e6-6dd5646e232a'
+  label: 'Funded by'
+  label_display: visible
+  provider: block_content
+  view_mode: full
+visibility: {  }

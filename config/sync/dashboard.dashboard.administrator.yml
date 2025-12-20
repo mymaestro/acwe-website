@@ -1,0 +1,100 @@
+uuid: c304fcb0-495c-40bd-afe5-ed9e3d9b3b37
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.dashboard_content
+    - views.view.failed_cron_tasks
+    - views.view.recent_system_errors
+    - views.view.who_s_new
+  module:
+    - layout_builder
+    - layout_discovery
+    - views
+id: administrator
+label: Administrator
+description: 'A dashboard for the Drupal administrator'
+layout:
+  -
+    layout_id: layout_onecol
+    layout_settings:
+      label: ''
+      context_mapping: {  }
+    components:
+      f47997db-9355-4e82-9901-7dcbea75ca33:
+        uuid: f47997db-9355-4e82-9901-7dcbea75ca33
+        region: content
+        configuration:
+          id: 'views_block:recent_system_errors-block_1'
+          label: ''
+          label_display: visible
+          provider: views
+          context_mapping: {  }
+          views_label: ''
+          items_per_page: null
+          exposed: {  }
+        weight: 0
+        additional: {  }
+      6f173c39-43c7-4e8d-bcc0-24ad148c2131:
+        uuid: 6f173c39-43c7-4e8d-bcc0-24ad148c2131
+        region: content
+        configuration:
+          id: 'views_block:failed_cron_tasks-block_1'
+          label: ''
+          label_display: visible
+          provider: views
+          context_mapping: {  }
+          views_label: ''
+          items_per_page: null
+          exposed: {  }
+        weight: 1
+        additional: {  }
+    third_party_settings: {  }
+  -
+    layout_id: layout_twocol_section
+    layout_settings:
+      label: ''
+      context_mapping: {  }
+      column_widths: 50-50
+    components:
+      c788d562-4df6-46ff-a79b-7aef0b3ac5e3:
+        uuid: c788d562-4df6-46ff-a79b-7aef0b3ac5e3
+        region: first
+        configuration:
+          id: dashboard_site_status
+          label: 'Site Status'
+          label_display: visible
+          provider: dashboard
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+      66067bd6-140e-4609-be7c-79f433d369c2:
+        uuid: 66067bd6-140e-4609-be7c-79f433d369c2
+        region: first
+        configuration:
+          id: 'views_block:dashboard_content-block_site_content'
+          label: ''
+          label_display: visible
+          provider: views
+          context_mapping: {  }
+          views_label: ''
+          items_per_page: null
+          exposed: {  }
+        weight: 1
+        additional: {  }
+      6e49a45e-2e3e-4359-bf5c-b98b1330dde4:
+        uuid: 6e49a45e-2e3e-4359-bf5c-b98b1330dde4
+        region: second
+        configuration:
+          id: 'views_block:who_s_new-block_1'
+          label: ''
+          label_display: visible
+          provider: views
+          context_mapping: {  }
+          views_label: ''
+          items_per_page: null
+          exposed: {  }
+        weight: 2
+        additional: {  }
+    third_party_settings: {  }
+weight: 0

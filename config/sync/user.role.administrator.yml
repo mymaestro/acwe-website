@@ -1,0 +1,137 @@
+uuid: 2e729ddb-7f06-4084-93e9-29daccd661f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.filtered_html
+    - filter.format.full_html
+    - node.type.article
+    - node.type.blog
+    - node.type.date
+    - node.type.front_page_announcement
+    - node.type.page
+    - node.type.panel
+    - node.type.photo_stream
+    - node.type.poll
+    - node.type.sponsor
+  module:
+    - announcements_feed
+    - block
+    - comment
+    - contact
+    - context_ui
+    - contextual
+    - filter
+    - image
+    - node
+    - path
+    - pathauto
+    - search
+    - shortcut
+    - system
+    - taxonomy
+    - toolbar
+    - views_ui
+_core:
+  default_config_hash: OeKGIkmZA_c-t6QLH81WNQx8gDCc1MRmxaTuQgxBByU
+id: administrator
+label: administrator
+weight: 6
+is_admin: true
+permissions:
+  - 'access administration pages'
+  - 'access announcements'
+  - 'access comments'
+  - 'access content'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access site in maintenance mode'
+  - 'access site reports'
+  - 'access site-wide contact form'
+  - 'access toolbar'
+  - 'access user contact forms'
+  - 'access user profiles'
+  - 'administer actions'
+  - 'administer blocks'
+  - 'administer comments'
+  - 'administer contact forms'
+  - 'administer content types'
+  - 'administer contexts'
+  - 'administer filters'
+  - 'administer image styles'
+  - 'administer menu'
+  - 'administer modules'
+  - 'administer nodes'
+  - 'administer pathauto'
+  - 'administer permissions'
+  - 'administer search'
+  - 'administer shortcuts'
+  - 'administer site configuration'
+  - 'administer software updates'
+  - 'administer taxonomy'
+  - 'administer themes'
+  - 'administer url aliases'
+  - 'administer users'
+  - 'administer views'
+  - 'bypass node access'
+  - 'cancel account'
+  - 'change own username'
+  - 'create article content'
+  - 'create blog content'
+  - 'create date content'
+  - 'create front_page_announcement content'
+  - 'create page content'
+  - 'create panel content'
+  - 'create photo_stream content'
+  - 'create poll content'
+  - 'create sponsor content'
+  - 'create url aliases'
+  - 'customize shortcut links'
+  - 'delete any article content'
+  - 'delete any blog content'
+  - 'delete any date content'
+  - 'delete any front_page_announcement content'
+  - 'delete any page content'
+  - 'delete any panel content'
+  - 'delete any photo_stream content'
+  - 'delete any poll content'
+  - 'delete any sponsor content'
+  - 'delete own article content'
+  - 'delete own blog content'
+  - 'delete own date content'
+  - 'delete own front_page_announcement content'
+  - 'delete own page content'
+  - 'delete own panel content'
+  - 'delete own photo_stream content'
+  - 'delete own poll content'
+  - 'delete own sponsor content'
+  - 'edit any article content'
+  - 'edit any blog content'
+  - 'edit any date content'
+  - 'edit any front_page_announcement content'
+  - 'edit any page content'
+  - 'edit any panel content'
+  - 'edit any photo_stream content'
+  - 'edit any poll content'
+  - 'edit any sponsor content'
+  - 'edit own article content'
+  - 'edit own blog content'
+  - 'edit own comments'
+  - 'edit own date content'
+  - 'edit own front_page_announcement content'
+  - 'edit own page content'
+  - 'edit own panel content'
+  - 'edit own photo_stream content'
+  - 'edit own poll content'
+  - 'edit own sponsor content'
+  - 'notify of path changes'
+  - 'post comments'
+  - 'search content'
+  - 'select account cancellation method'
+  - 'skip comment approval'
+  - 'switch shortcut sets'
+  - 'use advanced search'
+  - 'use text format filtered_html'
+  - 'use text format full_html'
+  - 'view own unpublished content'
+  - 'view the administration theme'

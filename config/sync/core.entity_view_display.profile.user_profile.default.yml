@@ -1,0 +1,30 @@
+uuid: 59e884dd-02f6-4615-95a3-2c3482525f25
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.profile.user_profile.field_first_name
+    - field.field.profile.user_profile.field_last_name
+    - profile.type.user_profile
+id: profile.user_profile.default
+targetEntityType: profile
+bundle: user_profile
+mode: default
+content:
+  field_first_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_last_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

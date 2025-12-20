@@ -1,0 +1,9 @@
+uuid: 590dcc99-e318-4c0e-88a1-e4daafca3873
+langcode: en
+status: true
+dependencies: {  }
+name: 'Event type'
+vid: event_type
+description: 'How to flag events with a target audience'
+weight: 0
+new_revision: false

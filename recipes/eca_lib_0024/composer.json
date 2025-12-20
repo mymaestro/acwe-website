@@ -1,0 +1,10 @@
+{
+    "name": "drupal-eca-recipe/eca_lib_0024",
+    "type": "drupal-recipe",
+    "description": "Send email to users of a given role",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "drupal/core": ">=11.2",
+        "drupal/eca": "^3"
+    }
+}

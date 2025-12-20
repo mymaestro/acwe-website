@@ -1,0 +1,27 @@
+uuid: ea988792-a1d2-44ec-837f-ad08ea8243c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_event_calendar
+    - field.field.comment.comment_node_event_calendar.comment_body
+  module:
+    - text
+id: comment.comment_node_event_calendar.default
+targetEntityType: comment
+bundle: comment_node_event_calendar
+mode: default
+content:
+  comment_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

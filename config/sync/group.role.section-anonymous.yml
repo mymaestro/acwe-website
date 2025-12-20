@@ -1,0 +1,15 @@
+uuid: 0febeb5e-2b75-40d0-98f6-542ec297a7ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.section
+    - user.role.anonymous
+id: section-anonymous
+label: Anonymous
+weight: -102
+admin: false
+scope: outsider
+global_role: anonymous
+group_type: section
+permissions: {  }

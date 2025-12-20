@@ -1,0 +1,281 @@
+uuid: 29375ee4-3602-4021-bf3c-8b470c65cc7c
+langcode: en
+status: true
+dependencies: {  }
+id: eca_bpmn_io_process_melyuwn
+data: |
+  <?xml version="1.0" encoding="UTF-8"?>
+  <bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:qa="http://some-company/schema/bpmn/qa" id="sample-diagram" targetNamespace="http://bpmn.io/schema/bpmn" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd">
+    <bpmn2:process id="Process_meLYuWN" name="Notify about new user registration with section leads" isExecutable="true" camunda:versionTag="">
+      <bpmn2:documentation />
+      <bpmn2:extensionElements>
+        <camunda:properties>
+          <camunda:property name="Tags" value="" />
+          <camunda:property name="Changelog" value="" />
+        </camunda:properties>
+      </bpmn2:extensionElements>
+      <bpmn2:startEvent id="eca_base__eca_custom_1" name="SendM2" camunda:modelerTemplate="org.drupal.event.eca_base:eca_custom">
+        <bpmn2:extensionElements>
+          <camunda:field name="event_id">
+            <camunda:string>m2</camunda:string>
+          </camunda:field>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="eca_base:eca_custom" />
+          </camunda:properties>
+        </bpmn2:extensionElements>
+        <bpmn2:outgoing>Flow_1yxuapc</bpmn2:outgoing>
+      </bpmn2:startEvent>
+      <bpmn2:task id="action_send_email_action_07c7tdt" name="Send email" camunda:modelerTemplate="org.drupal.action.action_send_email_action">
+        <bpmn2:extensionElements>
+          <camunda:field name="recipient">
+            <camunda:string>[entity:mail]</camunda:string>
+          </camunda:field>
+          <camunda:field name="subject">
+            <camunda:string>This is a registration event</camunda:string>
+          </camunda:field>
+          <camunda:field name="message">
+            <camunda:string>Hello [entity:name]
+  </camunda:string>
+          </camunda:field>
+          <camunda:field name="replace_tokens">
+            <camunda:string>yes</camunda:string>
+          </camunda:field>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="action_send_email_action" />
+          </camunda:properties>
+        </bpmn2:extensionElements>
+        <bpmn2:incoming>Flow_1yxuapc</bpmn2:incoming>
+      </bpmn2:task>
+      <bpmn2:sequenceFlow id="Flow_1yxuapc" sourceRef="eca_base__eca_custom_1" targetRef="action_send_email_action_07c7tdt" />
+      <bpmn2:startEvent id="content_entity__insert_1_1" name="Insert content entity" camunda:modelerTemplate="org.drupal.event.content_entity:insert">
+        <bpmn2:extensionElements>
+          <camunda:field name="type">
+            <camunda:string>user user</camunda:string>
+          </camunda:field>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="content_entity:insert" />
+          </camunda:properties>
+        </bpmn2:extensionElements>
+        <bpmn2:outgoing>Flow_13zorl9</bpmn2:outgoing>
+      </bpmn2:startEvent>
+      <bpmn2:task id="eca_switch_service_account_1b5tcws" name="User: switch to service user" camunda:modelerTemplate="org.drupal.action.eca_switch_service_account">
+        <bpmn2:extensionElements>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="eca_switch_service_account" />
+          </camunda:properties>
+        </bpmn2:extensionElements>
+        <bpmn2:outgoing>Flow_0ak4qhs</bpmn2:outgoing>
+        <bpmn2:outgoing>Flow_175v791</bpmn2:outgoing>
+      </bpmn2:task>
+      <bpmn2:task id="eca_new_entity_05aga79" name="Entity: create new" camunda:modelerTemplate="org.drupal.action.eca_new_entity">
+        <bpmn2:extensionElements>
+          <camunda:field name="token_name">
+            <camunda:string>notification_email</camunda:string>
+          </camunda:field>
+          <camunda:field name="type">
+            <camunda:string>easy_email notify_newuser</camunda:string>
+          </camunda:field>
+          <camunda:field name="langcode">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="label">
+            <camunda:string>New user created [user:display-name]</camunda:string>
+          </camunda:field>
+          <camunda:field name="published">
+            <camunda:string>no</camunda:string>
+          </camunda:field>
+          <camunda:field name="owner">
+            <camunda:string>1</camunda:string>
+          </camunda:field>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="eca_new_entity" />
+          </camunda:properties>
+        </bpmn2:extensionElements>
+        <bpmn2:incoming>Flow_0ak4qhs</bpmn2:incoming>
+        <bpmn2:outgoing>Flow_00rnao1</bpmn2:outgoing>
+      </bpmn2:task>
+      <bpmn2:sequenceFlow id="Flow_0ak4qhs" sourceRef="eca_switch_service_account_1b5tcws" targetRef="eca_new_entity_05aga79" />
+      <bpmn2:task id="eca_set_field_value_1kdd3kg" name="Entity: set field value" camunda:modelerTemplate="org.drupal.action.eca_set_field_value">
+        <bpmn2:extensionElements>
+          <camunda:field name="field_name">
+            <camunda:string>field_user</camunda:string>
+          </camunda:field>
+          <camunda:field name="field_value">
+            <camunda:string>[user:uid]</camunda:string>
+          </camunda:field>
+          <camunda:field name="method">
+            <camunda:string>set:clear</camunda:string>
+          </camunda:field>
+          <camunda:field name="strip_tags">
+            <camunda:string>no</camunda:string>
+          </camunda:field>
+          <camunda:field name="trim">
+            <camunda:string>no</camunda:string>
+          </camunda:field>
+          <camunda:field name="save_entity">
+            <camunda:string>no</camunda:string>
+          </camunda:field>
+          <camunda:field name="object">
+            <camunda:string>notification_email</camunda:string>
+          </camunda:field>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="eca_set_field_value" />
+          </camunda:properties>
+        </bpmn2:extensionElements>
+        <bpmn2:incoming>Flow_00rnao1</bpmn2:incoming>
+        <bpmn2:outgoing>Flow_10ctkg8</bpmn2:outgoing>
+      </bpmn2:task>
+      <bpmn2:sequenceFlow id="Flow_00rnao1" sourceRef="eca_new_entity_05aga79" targetRef="eca_set_field_value_1kdd3kg" />
+      <bpmn2:task id="eca_views_query_1bj3tt3" name="Views: Execute query - list users" camunda:modelerTemplate="org.drupal.action.eca_views_query">
+        <bpmn2:extensionElements>
+          <camunda:field name="token_name">
+            <camunda:string>userlist</camunda:string>
+          </camunda:field>
+          <camunda:field name="view_id">
+            <camunda:string>user_admin_people</camunda:string>
+          </camunda:field>
+          <camunda:field name="display_id">
+            <camunda:string>attachment_1</camunda:string>
+          </camunda:field>
+          <camunda:field name="arguments">
+            <camunda:string>registration_approver</camunda:string>
+          </camunda:field>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="eca_views_query" />
+          </camunda:properties>
+        </bpmn2:extensionElements>
+        <bpmn2:incoming>Flow_10ctkg8</bpmn2:incoming>
+        <bpmn2:incoming>Flow_1v37x4e</bpmn2:incoming>
+        <bpmn2:outgoing>Flow_1uc2zka</bpmn2:outgoing>
+      </bpmn2:task>
+      <bpmn2:sequenceFlow id="Flow_10ctkg8" sourceRef="eca_set_field_value_1kdd3kg" targetRef="eca_views_query_1bj3tt3" />
+      <bpmn2:task id="eca_trigger_content_entity_custom_event_0vg8zik" name="Trigger SendM2 a custom event (entity-aware)" camunda:modelerTemplate="org.drupal.action.eca_trigger_content_entity_custom_event">
+        <bpmn2:extensionElements>
+          <camunda:field name="event_id">
+            <camunda:string>m2</camunda:string>
+          </camunda:field>
+          <camunda:field name="tokens">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="object">
+            <camunda:string>userlist</camunda:string>
+          </camunda:field>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="eca_trigger_content_entity_custom_event" />
+          </camunda:properties>
+        </bpmn2:extensionElements>
+        <bpmn2:incoming>Flow_1uc2zka</bpmn2:incoming>
+      </bpmn2:task>
+      <bpmn2:sequenceFlow id="Flow_1uc2zka" sourceRef="eca_views_query_1bj3tt3" targetRef="eca_trigger_content_entity_custom_event_0vg8zik" />
+      <bpmn2:task id="eca_write_log_message_0cu6x97" name="Log Message" camunda:modelerTemplate="org.drupal.action.eca_write_log_message">
+        <bpmn2:extensionElements>
+          <camunda:field name="channel">
+            <camunda:string>user</camunda:string>
+          </camunda:field>
+          <camunda:field name="severity">
+            <camunda:string>5</camunda:string>
+          </camunda:field>
+          <camunda:field name="message">
+            <camunda:string>Switched user, current UID: [current-user:uid]</camunda:string>
+          </camunda:field>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="eca_write_log_message" />
+          </camunda:properties>
+        </bpmn2:extensionElements>
+        <bpmn2:incoming>Flow_175v791</bpmn2:incoming>
+      </bpmn2:task>
+      <bpmn2:sequenceFlow id="Flow_175v791" sourceRef="eca_switch_service_account_1b5tcws" targetRef="eca_write_log_message_0cu6x97" />
+      <bpmn2:task id="eca_switch_service_account_0qintom" name="User: switch to service user" camunda:modelerTemplate="org.drupal.action.eca_switch_service_account">
+        <bpmn2:extensionElements>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="eca_switch_service_account" />
+          </camunda:properties>
+        </bpmn2:extensionElements>
+        <bpmn2:incoming>Flow_13zorl9</bpmn2:incoming>
+        <bpmn2:outgoing>Flow_1v37x4e</bpmn2:outgoing>
+      </bpmn2:task>
+      <bpmn2:sequenceFlow id="Flow_13zorl9" sourceRef="content_entity__insert_1_1" targetRef="eca_switch_service_account_0qintom" />
+      <bpmn2:sequenceFlow id="Flow_1v37x4e" sourceRef="eca_switch_service_account_0qintom" targetRef="eca_views_query_1bj3tt3" />
+    </bpmn2:process>
+    <bpmndi:BPMNDiagram id="BPMNDiagram_Process_meLYuWN">
+      <bpmndi:BPMNPlane id="BPMNPlane_Process_meLYuWN" bpmnElement="Process_meLYuWN">
+        <bpmndi:BPMNShape id="eca_base__eca_custom_1_1_di" bpmnElement="eca_base__eca_custom_1">
+          <dc:Bounds x="72" y="432" width="36" height="36" />
+          <bpmndi:BPMNLabel>
+            <dc:Bounds x="70" y="468" width="41" height="14" />
+          </bpmndi:BPMNLabel>
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNShape id="action_send_email_action_07c7tdt_di" bpmnElement="action_send_email_action_07c7tdt">
+          <dc:Bounds x="190" y="410" width="100" height="80" />
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNShape id="content_entity__insert_1kbdw3s_1_di" bpmnElement="content_entity__insert_1_1">
+          <dc:Bounds x="57" y="192" width="36" height="36" />
+          <bpmndi:BPMNLabel>
+            <dc:Bounds x="40" y="228" width="70" height="27" />
+          </bpmndi:BPMNLabel>
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNShape id="eca_switch_service_account_1b5tcws_di" bpmnElement="eca_switch_service_account_1b5tcws">
+          <dc:Bounds x="175" y="170" width="100" height="80" />
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNShape id="eca_new_entity_05aga79_di" bpmnElement="eca_new_entity_05aga79">
+          <dc:Bounds x="325" y="170" width="100" height="80" />
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNShape id="eca_set_field_value_1kdd3kg_di" bpmnElement="eca_set_field_value_1kdd3kg">
+          <dc:Bounds x="475" y="170" width="100" height="80" />
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNShape id="eca_views_query_1bj3tt3_di" bpmnElement="eca_views_query_1bj3tt3">
+          <dc:Bounds x="625" y="170" width="100" height="80" />
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNShape id="eca_trigger_content_entity_custom_event_0vg8zik_di" bpmnElement="eca_trigger_content_entity_custom_event_0vg8zik">
+          <dc:Bounds x="775" y="170" width="100" height="80" />
+          <bpmndi:BPMNLabel />
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNShape id="Activity_0cu6x97_di" bpmnElement="eca_write_log_message_0cu6x97">
+          <dc:Bounds x="330" y="280" width="100" height="80" />
+          <bpmndi:BPMNLabel />
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNShape id="Activity_0qintom_di" bpmnElement="eca_switch_service_account_0qintom">
+          <dc:Bounds x="280" y="10" width="100" height="80" />
+          <bpmndi:BPMNLabel />
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNEdge id="Flow_1yxuapc_di" bpmnElement="Flow_1yxuapc">
+          <di:waypoint x="108" y="450" />
+          <di:waypoint x="190" y="450" />
+        </bpmndi:BPMNEdge>
+        <bpmndi:BPMNEdge id="Flow_0ak4qhs_di" bpmnElement="Flow_0ak4qhs">
+          <di:waypoint x="275" y="210" />
+          <di:waypoint x="325" y="210" />
+        </bpmndi:BPMNEdge>
+        <bpmndi:BPMNEdge id="Flow_00rnao1_di" bpmnElement="Flow_00rnao1">
+          <di:waypoint x="425" y="210" />
+          <di:waypoint x="475" y="210" />
+        </bpmndi:BPMNEdge>
+        <bpmndi:BPMNEdge id="Flow_10ctkg8_di" bpmnElement="Flow_10ctkg8">
+          <di:waypoint x="575" y="210" />
+          <di:waypoint x="625" y="210" />
+        </bpmndi:BPMNEdge>
+        <bpmndi:BPMNEdge id="Flow_1uc2zka_di" bpmnElement="Flow_1uc2zka">
+          <di:waypoint x="725" y="210" />
+          <di:waypoint x="775" y="210" />
+        </bpmndi:BPMNEdge>
+        <bpmndi:BPMNEdge id="Flow_175v791_di" bpmnElement="Flow_175v791">
+          <di:waypoint x="275" y="210" />
+          <di:waypoint x="300" y="210" />
+          <di:waypoint x="300" y="320" />
+          <di:waypoint x="330" y="320" />
+        </bpmndi:BPMNEdge>
+        <bpmndi:BPMNEdge id="Flow_13zorl9_di" bpmnElement="Flow_13zorl9">
+          <di:waypoint x="93" y="210" />
+          <di:waypoint x="187" y="210" />
+          <di:waypoint x="187" y="50" />
+          <di:waypoint x="280" y="50" />
+        </bpmndi:BPMNEdge>
+        <bpmndi:BPMNEdge id="Flow_1v37x4e_di" bpmnElement="Flow_1v37x4e">
+          <di:waypoint x="380" y="50" />
+          <di:waypoint x="503" y="50" />
+          <di:waypoint x="503" y="180" />
+          <di:waypoint x="625" y="180" />
+        </bpmndi:BPMNEdge>
+      </bpmndi:BPMNPlane>
+    </bpmndi:BPMNDiagram>
+  </bpmn2:definitions>

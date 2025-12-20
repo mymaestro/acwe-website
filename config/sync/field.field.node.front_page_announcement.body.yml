@@ -1,0 +1,28 @@
+uuid: b73a2bc2-a7b0-444a-9ca6-038d826a626f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - filter.format.basic_html
+    - filter.format.full_html
+    - node.type.front_page_announcement
+  module:
+    - text
+id: node.front_page_announcement.body
+field_name: body
+entity_type: node
+bundle: front_page_announcement
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats:
+    - basic_html
+    - full_html
+field_type: text_with_summary

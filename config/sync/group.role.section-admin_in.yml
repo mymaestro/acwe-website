@@ -1,0 +1,15 @@
+uuid: e922b5bc-5fef-40cf-8877-1e3c5c619e2d
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.section
+    - user.role.administrator
+id: section-admin_in
+label: Administrator
+weight: 102
+admin: true
+scope: insider
+global_role: administrator
+group_type: section
+permissions: {  }

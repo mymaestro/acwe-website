@@ -1,0 +1,23 @@
+uuid: 8e2c3072-6db2-41de-9ee4-d828bd72698f
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:7e7749de-b7bd-46e8-b3f1-17b7d6e38e04'
+  module:
+    - block_content
+  theme:
+    - acwe2025_bootstrap
+id: acwe2025_bootstrap_socialmedia
+theme: acwe2025_bootstrap
+region: footer_second
+weight: -9
+provider: null
+plugin: 'block_content:7e7749de-b7bd-46e8-b3f1-17b7d6e38e04'
+settings:
+  id: 'block_content:7e7749de-b7bd-46e8-b3f1-17b7d6e38e04'
+  label: 'Social media'
+  label_display: visible
+  provider: block_content
+  view_mode: full
+visibility: {  }

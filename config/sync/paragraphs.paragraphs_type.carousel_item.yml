@@ -1,0 +1,10 @@
+uuid: 4f46e9dc-c703-4d04-b42a-016a32ae5863
+langcode: en
+status: true
+dependencies: {  }
+id: carousel_item
+label: 'Carousel item'
+icon_uuid: null
+icon_default: null
+description: 'Add media and text to a bootstrap carousel'
+behavior_plugins: {  }

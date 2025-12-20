@@ -1,0 +1,23 @@
+uuid: ed47800a-fc0c-47b0-9fad-a6b05debffeb
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:0a53999f-0551-44dc-af33-9cb0a9374e8c'
+  module:
+    - block_content
+  theme:
+    - acwe2025_bootstrap
+id: acwe2025_bootstrap_mailingaddress
+theme: acwe2025_bootstrap
+region: footer_fifth
+weight: -8
+provider: null
+plugin: 'block_content:0a53999f-0551-44dc-af33-9cb0a9374e8c'
+settings:
+  id: 'block_content:0a53999f-0551-44dc-af33-9cb0a9374e8c'
+  label: 'Mailing address'
+  label_display: '0'
+  provider: block_content
+  view_mode: full
+visibility: {  }

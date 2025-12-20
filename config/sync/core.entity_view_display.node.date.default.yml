@@ -1,0 +1,187 @@
+uuid: 47d27a58-7da2-49b5-834f-9a518315d7b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.date.body
+    - field.field.node.date.comment_node_date
+    - field.field.node.date.field_date
+    - field.field.node.date.field_event_type
+    - field.field.node.date.field_image
+    - field.field.node.date.field_image_media
+    - field.field.node.date.field_tags
+    - field.field.node.date.field_venue
+    - node.type.date
+  module:
+    - datetime_range
+    - layout_builder
+    - responsive_image
+    - text
+    - user
+  theme:
+    - bootstrap_barrio
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: barrio_cardhorizontal
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          6e4f9ed2-81df-428d-ac88-496d44a6e430:
+            uuid: 6e4f9ed2-81df-428d-ac88-496d44a6e430
+            region: second
+            configuration:
+              id: 'field_block:node:date:field_date'
+              label: Date
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: daterange_default
+                label: hidden
+                settings:
+                  timezone_override: ''
+                  format_type: long
+                  from_to: both
+                  separator: '-'
+                third_party_settings: {  }
+            weight: -2
+            additional: {  }
+          14fccee0-6644-46cf-88da-af2b5d59949d:
+            uuid: 14fccee0-6644-46cf-88da-af2b5d59949d
+            region: second
+            configuration:
+              id: 'field_block:node:date:body'
+              label: Description
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          467f406e-41bd-4240-b7b9-a0d2d692d2c2:
+            uuid: 467f406e-41bd-4240-b7b9-a0d2d692d2c2
+            region: second
+            configuration:
+              id: 'field_block:node:date:field_venue'
+              label: Venue
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_entity_view
+                label: hidden
+                settings:
+                  view_mode: full
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          2025b02e-ebd3-4ea5-9909-8da4b70cce30:
+            uuid: 2025b02e-ebd3-4ea5-9909-8da4b70cce30
+            region: first
+            configuration:
+              id: 'field_block:node:date:field_image_media'
+              label: Image
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_entity_view
+                label: hidden
+                settings:
+                  view_mode: default
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+id: node.date.default
+targetEntityType: node
+bundle: date
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: second
+  field_date:
+    type: daterange_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: medium
+      from_to: both
+      separator: '-'
+    third_party_settings: {  }
+    weight: 1
+    region: second
+  field_event_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: second
+  field_image:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: ''
+      image_link: content
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: first
+  field_image_media:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 6
+    region: first
+  field_tags:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: first
+  field_venue:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: second
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: second
+hidden:
+  comment_node_date: true

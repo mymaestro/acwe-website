@@ -1,0 +1,21 @@
+uuid: 6439a32a-13f2-477e-820a-8b1242df4e9c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date
+    - node.type.front_page_announcement
+  module:
+    - datetime_range
+id: node.front_page_announcement.field_date
+field_name: field_date
+entity_type: node
+bundle: front_page_announcement
+label: 'Date range'
+description: 'Enter the expiration date for this announcement!'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange

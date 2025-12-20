@@ -1,0 +1,17 @@
+name: 'Send email to users of a given role'
+description: |-
+  This model sends an email to all users of a certain role. It contains a view with a contextual filter to limit the list of users to those of the given role.
+
+  The creation of this model was recorded with lots of additional explanations (e.g. how to use an existing model as a starting point) and [can be watched here](https://tube.tchncs.de/w/8dZuXYZHmuDTutddrTZUfE).
+type: Workflow
+install:
+  - eca_base
+  - eca_content
+  - eca_user
+  - eca_views
+  - user
+config:
+  strict: false
+  import:
+    user:
+      - views.view.user_admin_people

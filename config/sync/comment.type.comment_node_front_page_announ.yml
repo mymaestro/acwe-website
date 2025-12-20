@@ -1,0 +1,8 @@
+uuid: 1006b362-a7fc-403e-9539-8df8db7941b8
+langcode: en
+status: true
+dependencies: {  }
+id: comment_node_front_page_announ
+label: 'Front page announcement comment'
+target_entity_type_id: node
+description: null

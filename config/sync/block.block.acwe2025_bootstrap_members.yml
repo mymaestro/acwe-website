@@ -1,0 +1,39 @@
+uuid: 5066e2ef-7c02-42d6-bf7b-2c666ffcd7ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.members
+  module:
+    - menu_block
+    - system
+  theme:
+    - acwe2025_bootstrap
+id: acwe2025_bootstrap_members
+theme: acwe2025_bootstrap
+region: breadcrumb
+weight: -8
+provider: null
+plugin: 'menu_block:members'
+settings:
+  id: 'menu_block:members'
+  label: MEMBERS
+  label_display: '0'
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  display_empty: false
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 0
+  expand_all_items: false
+  parent: 'members:'
+  render_parent: false
+  suggestion: members
+  hide_on_nonactive: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/content/players-pages\r\n/communication\r\n/listening-examples\r\n/content/membership-policies-and-fees\r\n/content/code-conduct\r\n/calltimes\r\n/rehearsal\r\n"

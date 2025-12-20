@@ -1,0 +1,12 @@
+uuid: 845b39c6-ff16-4994-bc9a-86d4f95428b6
+langcode: en
+status: true
+dependencies: {  }
+id: acwe_membership
+label: 'ACWE Membership'
+recipients:
+  - acwemembership@gmail.com
+reply: 'Thank you for your contact regarding ACWE membership.'
+weight: 0
+message: null
+redirect: null

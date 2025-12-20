@@ -1,0 +1,165 @@
+uuid: f7ce2962-ae58-4e3e-b62a-d9fe80b0dabb
+langcode: en
+status: true
+dependencies:
+  config:
+    - easy_email.easy_email_type.notify_newuser
+    - field.field.easy_email.notify_newuser.field_user
+    - field.storage.easy_email.field_user
+    - views.view.user_admin_people
+  module:
+    - easy_email
+    - eca_content
+    - eca_user
+    - eca_views
+    - modeler_api
+    - user
+third_party_settings:
+  modeler_api:
+    modeler_id: bpmn_io
+    data: 'hash:5f2749edadc886803843cb7abc2ac50e'
+    label: 'New registration notify with section leads'
+    documentation: 'When a new user registers at /user/register send an email to all users with the role registration_approver with a link to the Approve/Deny page'
+    version: v1
+id: notify_section_leads
+weight: 0
+events:
+  content_entity__insert_1:
+    plugin: 'content_entity:insert'
+    label: 'Insert content entity'
+    configuration:
+      type: 'user user'
+    successors:
+      -
+        id: eca_switch_service_account_16t8pwc
+        condition: ''
+  content_entity__custom_1_1:
+    plugin: 'content_entity:custom'
+    label: 'ECA custom event (entity-aware)'
+    configuration:
+      event_id: m2
+    successors:
+      -
+        id: eca_switch_service_account_0rjx4tr
+        condition: ''
+conditions: {  }
+gateways: {  }
+actions:
+  eca_switch_service_account_16t8pwc:
+    label: 'User: switch to service user'
+    plugin: eca_switch_service_account
+    configuration: {  }
+    successors:
+      -
+        id: eca_new_entity_1jhf5m1
+        condition: ''
+  eca_views_query_03rfu7d:
+    label: 'Views: Execute query'
+    plugin: eca_views_query
+    configuration:
+      token_name: leads
+      view_id: user_admin_people
+      display_id: attachment_1
+      arguments: registration_approver
+    successors:
+      -
+        id: eca_trigger_content_entity_custom_event_0q8mwz4
+        condition: ''
+  eca_trigger_content_entity_custom_event_0q8mwz4:
+    label: 'Trigger a custom event (entity-aware)'
+    plugin: eca_trigger_content_entity_custom_event
+    configuration:
+      event_id: m2
+      tokens: notification_email
+      object: leads
+    successors: {  }
+  eca_new_entity_1jhf5m1:
+    label: 'Entity: create new'
+    plugin: eca_new_entity
+    configuration:
+      token_name: notification_email
+      type: 'easy_email notify_newuser'
+      langcode: ''
+      label: 'New user created'
+      published: false
+      owner: ''
+    successors:
+      -
+        id: eca_set_field_value_1vup4zj
+        condition: ''
+  eca_set_field_value_1vup4zj:
+    label: 'Entity: set field value'
+    plugin: eca_set_field_value
+    configuration:
+      field_name: field_user
+      field_value: '[user:uid]'
+      method: 'set:clear'
+      strip_tags: false
+      trim: false
+      save_entity: true
+      object: notification_email
+    successors:
+      -
+        id: eca_views_query_03rfu7d
+        condition: ''
+  easy_email_send_0qb1ng4:
+    label: 'Send Easy Email'
+    plugin: easy_email_send
+    configuration:
+      object: mail_m2
+    successors: {  }
+  eca_switch_service_account_0rjx4tr:
+    label: 'User: switch to service user'
+    plugin: eca_switch_service_account
+    configuration: {  }
+    successors:
+      -
+        id: eca_new_entity_18vob7e
+        condition: ''
+  eca_new_entity_18vob7e:
+    label: 'Entity: create new'
+    plugin: eca_new_entity
+    configuration:
+      token_name: mail_m2
+      type: 'easy_email notify_newuser'
+      langcode: ''
+      label: 'Notify new user'
+      published: false
+      owner: '1'
+    successors:
+      -
+        id: eca_set_field_value_0a20mj8
+        condition: ''
+      -
+        id: eca_set_field_value_1j582k0
+        condition: ''
+  eca_set_field_value_0a20mj8:
+    label: 'Entity: set field value'
+    plugin: eca_set_field_value
+    configuration:
+      field_name: field_user
+      field_value: '[notification_email:field_user]'
+      method: 'set:clear'
+      strip_tags: false
+      trim: false
+      save_entity: true
+      object: mail_m2
+    successors:
+      -
+        id: easy_email_send_0qb1ng4
+        condition: ''
+  eca_set_field_value_1j582k0:
+    label: 'Entity: set field value'
+    plugin: eca_set_field_value
+    configuration:
+      field_name: recipient_address
+      field_value: '[entity:mail]'
+      method: 'set:clear'
+      strip_tags: false
+      trim: false
+      save_entity: true
+      object: mail_m2
+    successors:
+      -
+        id: easy_email_send_0qb1ng4
+        condition: ''

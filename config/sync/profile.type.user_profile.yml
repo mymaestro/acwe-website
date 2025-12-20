@@ -1,0 +1,13 @@
+uuid: 70d8bc8f-5efc-4493-b4df-d5433941c130
+langcode: en
+status: true
+dependencies: {  }
+id: user_profile
+label: 'User profile'
+display_label: ''
+multiple: false
+registration: true
+roles:
+  authenticated: authenticated
+allow_revisions: false
+new_revision: false

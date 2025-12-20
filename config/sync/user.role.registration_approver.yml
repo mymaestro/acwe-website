@@ -1,0 +1,24 @@
+uuid: 022261db-e8af-4794-828c-b6acf4776f08
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.forum
+  module:
+    - acwe_registration
+    - forum
+    - group
+    - node
+    - system
+id: registration_approver
+label: 'Section lead'
+weight: 7
+is_admin: false
+permissions:
+  - 'access administration pages'
+  - 'access group overview'
+  - 'administer forums'
+  - 'delete any forum content'
+  - 'edit any forum content'
+  - 'manage acwe registration approvals'
+  - 'view the administration theme'

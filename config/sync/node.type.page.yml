@@ -1,0 +1,21 @@
+uuid: 8ee1a29b-20a7-419e-a3eb-fcaab71297f9
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+      - tools
+    parent: 'main:'
+_core:
+  default_config_hash: i0snV8Wj--OkRW12UdachUiYiz3FbeMwHu_pZYfzKLc
+name: Page
+type: page
+description: "Use <em>basic pages</em> for your static content, such as an 'About us' page.\r\nYou can also embed images in a <em>Page</em>."
+help: null
+new_revision: false
+preview_mode: 1
+display_submitted: false

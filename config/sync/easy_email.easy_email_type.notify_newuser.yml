@@ -1,0 +1,29 @@
+uuid: 50f3a2a4-4456-495b-848f-cb36c4f78acd
+langcode: en
+status: true
+dependencies: {  }
+id: notify_newuser
+label: 'Notify about new user registration'
+key: ''
+recipient: {  }
+cc: {  }
+bcc: {  }
+fromName: ''
+fromAddress: ''
+replyToAddress: ''
+subject: 'ACWE: Registration for [easy_email:field_user:entity:user_profile:field_first_name] [easy_email:field_user:entity:user_profile:field_last_name] is pending approval.'
+inboxPreview: ''
+bodyHtml:
+  value: '<div style="background-color:#fff;color:#222;font-family:Arial, sans-serif;margin:2em;"><p>Dear [site:name] section lead,</p><h2>A new member registered</h2><p><strong>[easy_email:field_user:entity:user_profile:field_first_name] [easy_email:field_user:entity:user_profile:field_last_name] </strong>registered with account name <a href="mailto:[easy_email:field_user:entity:mail]">[easy_email:field_user:entity:account-name]</a> on [easy_email:field_user:entity:created] as <strong>[easy_email:field_user:entity:field_member_status]</strong>. The member requested to be a part of the [easy_email:field_user:entity:field_primary_section] section.</p><p>You can approve (or deny) the membership request at the following link:</p><p><a style="background-color:#004080;border-radius:4px;color:#fff;padding:10px 15px;text-decoration:none;" href="[site:url]admin/people/pending">[site:url]admin/people/pending</a></p><p>Approving the member gives them access to [site:name] band member messages, forums, and parts downloading.</p><div style="background-color:#f9f9f9;border:1px solid #eee;font-size:0.95em;padding:1em;"><h3>Electronic music Terms of Use</h3><ol><li><strong>Ownership:</strong> All sheet music (electronic or printed) remains the exclusive property of Austin Civic Wind Ensemble. Copyrights remain with the publisher or composer.</li><li><strong>Authorized Use:</strong> You are granted a limited license to download and use the assigned sheet music solely for rehearsals and performances with Austin Civic Wind Ensemble. You may not share, copy, upload, or distribute the music.</li><li><strong>Retention and Deletion:</strong> After the final performance of a work (or if requested by Austin Civic Wind Ensemble), you must permanently delete all electronic copies and destroy or return any printed copies.</li><li><strong>Confidentiality:</strong> You may not post, email, or otherwise make the sheet music available to others.</li></ol></div><p>If you have any issues or concerns, please contact an [site:name] board member.</p><div style="color:#555;font-size:0.9em;margin-top:2em;">Best regards,<br>[site:name]<br><img style="display:block;margin-top:1em;max-height:167px;max-width:120px;opacity:0.85;" src="https://library.acwe.org/images/logo_367x512.png" alt="Austin Civic Wind Ensemble Logo" width="120" height="167"></div></div>'
+  format: full_html
+bodyPlain: ''
+generateBodyPlain: false
+attachment: {  }
+saveAttachment: false
+attachmentScheme: public
+attachmentDirectory: ''
+saveEmail: true
+allowSavingEmail: true
+purgeEmails: false
+purgeInterval: null
+purgePeriod: null

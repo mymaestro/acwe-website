@@ -1,0 +1,19 @@
+uuid: ba75a123-1606-4e06-8e0b-fa945c28ed80
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+      - admin
+    parent: 'main:'
+name: 'Front page announcement'
+type: front_page_announcement
+description: 'Use this content type for a notice or article that rides on the front page, and has an expiration date.'
+help: null
+new_revision: false
+preview_mode: 1
+display_submitted: false
