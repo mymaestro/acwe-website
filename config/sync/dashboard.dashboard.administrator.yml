@@ -3,6 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - system.menu.admin
+    - system.menu.section-leads
     - views.view.dashboard_content
     - views.view.failed_cron_tasks
     - views.view.recent_system_errors
@@ -10,11 +12,78 @@ dependencies:
   module:
     - layout_builder
     - layout_discovery
+    - menu_block
+    - search
     - views
 id: administrator
 label: Administrator
 description: 'A dashboard for the Drupal administrator'
 layout:
+  -
+    layout_id: layout_onecol
+    layout_settings:
+      label: ''
+      context_mapping: {  }
+    components:
+      ccf86972-1492-46b5-b745-f0591f2bfa43:
+        uuid: ccf86972-1492-46b5-b745-f0591f2bfa43
+        region: content
+        configuration:
+          id: search_form_block
+          label: 'Search form'
+          label_display: visible
+          provider: search
+          context_mapping: {  }
+          page_id: null
+        weight: 0
+        additional: {  }
+      065604ba-8a45-4cc2-815b-5eb1ac768307:
+        uuid: 065604ba-8a45-4cc2-815b-5eb1ac768307
+        region: content
+        configuration:
+          id: 'menu_block:admin'
+          label: Management
+          label_display: visible
+          provider: menu_block
+          context_mapping: {  }
+          follow: false
+          follow_parent: child
+          display_empty: false
+          label_link: false
+          label_type: block
+          level: 1
+          depth: 0
+          expand_all_items: false
+          parent: 'admin:'
+          render_parent: false
+          suggestion: admin
+          hide_on_nonactive: false
+        weight: 2
+        additional: {  }
+      4dcc8cf3-905c-4e71-b27e-c155af544edc:
+        uuid: 4dcc8cf3-905c-4e71-b27e-c155af544edc
+        region: content
+        configuration:
+          id: 'menu_block:section-leads'
+          label: 'Section leads'
+          label_display: visible
+          provider: menu_block
+          context_mapping: {  }
+          follow: false
+          follow_parent: child
+          display_empty: false
+          label_link: false
+          label_type: block
+          level: 1
+          depth: 0
+          expand_all_items: false
+          parent: 'section-leads:'
+          render_parent: false
+          suggestion: section_leads
+          hide_on_nonactive: false
+        weight: 1
+        additional: {  }
+    third_party_settings: {  }
   -
     layout_id: layout_onecol
     layout_settings:

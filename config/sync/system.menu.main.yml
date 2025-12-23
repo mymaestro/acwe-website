@@ -5,6 +5,6 @@ dependencies: {  }
 _core:
   default_config_hash: Q2Ra3jfoIVk0f3SjxJX61byRQFVBAbpzYDQOiY-kno8
 id: main
-label: 'Main menu'
+label: 'MAIN MENU'
 description: "The <em>Main</em> menu shows stops on the musical journey. It's displayed on top."
 locked: true

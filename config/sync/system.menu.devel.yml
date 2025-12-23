@@ -3,6 +3,6 @@ langcode: en
 status: true
 dependencies: {  }
 id: devel
-label: Development
-description: 'Development link'
+label: DEVELOPMENT
+description: 'Links to content editing pages'
 locked: false
