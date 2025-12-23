@@ -6,3 +6,4 @@ core_version_requirement: ^11
 dependencies:
   - drupal:user
   - group:group
+configure: acwe_registration.keyword_settings

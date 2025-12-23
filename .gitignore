@@ -50,3 +50,4 @@ sites/simpletest
 !/modules/custom
 !/themes/custom
 !/profiles/custom
+/.gitattributes

@@ -106,6 +106,15 @@ body {
     color: var(--acwe-accent) !important;
 }
 
+/* Menus display side-by-side */
+.region-primary-menu {
+    display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-right: auto;
+}
+
+
 /* Content Area - Clean & Spacious */
 .main-container {
     margin-top: 2rem;
@@ -235,7 +244,6 @@ h1 {
     .navbar-brand {
         font-size: 1.5rem;
     }
-
     .layout--barrio-col3-equal .layout__region {
         margin-bottom: 2rem;
         padding: 1.5rem;
@@ -243,6 +251,11 @@ h1 {
     
     .front .layout__region h2 {
         font-size: 1.3rem;
+    }
+    /* So menus appear side-by-side */
+    .offcanvas-body {
+        display: flex;
+        flex-direction: row;
     }
 }
 
