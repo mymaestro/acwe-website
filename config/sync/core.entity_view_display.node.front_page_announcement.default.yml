@@ -6,13 +6,13 @@ dependencies:
     - field.field.node.front_page_announcement.body
     - field.field.node.front_page_announcement.comment_node_front_page_announ
     - field.field.node.front_page_announcement.field_date
-    - field.field.node.front_page_announcement.field_image
+    - field.field.node.front_page_announcement.field_event_date
     - field.field.node.front_page_announcement.field_image_media
     - field.field.node.front_page_announcement.field_tags
     - node.type.front_page_announcement
   module:
     - layout_builder
-    - responsive_image
+    - smart_date
     - text
     - user
   theme:
@@ -78,17 +78,29 @@ content:
     third_party_settings: {  }
     weight: 1
     region: second
-  field_image:
-    type: responsive_image
+  field_event_date:
+    type: smartdate_default
     label: hidden
     settings:
-      responsive_image_style: ''
-      image_link: ''
-      image_loading:
-        attribute: lazy
+      timezone_override: ''
+      format_type: medium
+      format: default
+      force_chronological: false
+      add_classes: false
+      time_wrapper: true
+      localize: false
+      parts:
+        start: start
+        end: end
+        duration: '0'
+      duration:
+        separator: ' | '
+        unit: ''
+        decimals: 2
+        suffix: h
     third_party_settings: {  }
-    weight: 0
-    region: first
+    weight: 3
+    region: second
   field_image_media:
     type: entity_reference_entity_view
     label: hidden

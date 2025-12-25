@@ -1,13 +1,10 @@
-uuid: 20ae3cec-8651-4a2a-ad23-4194fadbaed8
+uuid: fcdce005-ec00-415a-bbf5-c720ea1a1175
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.body
-    - field.storage.node.field_date
     - field.storage.node.field_event_type
     - field.storage.node.field_venue
-    - system.menu.main
     - taxonomy.vocabulary.event_type
   content:
     - 'taxonomy_term:event_type:8d0af2be-1532-4143-8dfc-9670ce8ecb9d'
@@ -15,14 +12,12 @@ dependencies:
     - 'taxonomy_term:event_type:bfe6f356-efee-49e7-9fb0-ddaaf5b5e5b6'
     - 'taxonomy_term:event_type:ec35cc85-c91e-425b-b52a-7836b1149466'
   module:
-    - datetime_range
     - node
     - smart_date
     - taxonomy
-    - text
     - user
-id: call_times
-label: 'Member events'
+id: group_member_events
+label: 'Call times'
 module: views
 description: 'All upcoming member events'
 tag: ''
@@ -37,6 +32,107 @@ display:
     display_options:
       title: 'Upcoming member events'
       fields:
+        field_event_date_value_1:
+          id: field_event_date_value_1
+          table: node__field_event_date
+          field: field_event_date_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: date
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: h2
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          date_format: custom
+          custom_date_format: 'F Y'
+          timezone: ''
+        nothing:
+          id: nothing
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: custom
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: '<hr>'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
         title:
           id: title
           table: node_field_data
@@ -76,7 +172,7 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: h2
+          element_type: h5
           element_class: ''
           element_label_type: ''
           element_label_class: ''
@@ -202,7 +298,7 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
+          element_type: em
           element_class: ''
           element_label_type: ''
           element_label_class: ''
@@ -214,75 +310,9 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          date_format: fallback
+          date_format: long
           custom_date_format: ''
           timezone: ''
-        field_date:
-          id: field_date
-          table: node__field_date
-          field: field_date
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: daterange_default
-          settings:
-            timezone_override: ''
-            format_type: long
-            from_to: start_date
-            separator: '-'
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
         field_venue:
           id: field_venue
           table: node__field_venue
@@ -320,7 +350,7 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: em
+          element_type: ''
           element_class: ''
           element_label_type: ''
           element_label_class: ''
@@ -337,68 +367,6 @@ display:
           settings:
             view_mode: default
           group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        body:
-          id: body
-          table: node__body
-          field: body
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: text_default
-          settings: {  }
-          group_column: value
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -541,19 +509,19 @@ display:
             32: 32
             18: 18
           group: 1
-          exposed: false
+          exposed: true
           expose:
-            operator_id: ''
-            label: ''
-            description: ''
+            operator_id: field_event_type_target_id_op
+            label: 'Event type(s)'
+            description: 'Choose which event type(s) to view'
             use_operator: false
-            operator: ''
+            operator: field_event_type_target_id_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: ''
+            identifier: field_event_type_target_id
             required: false
-            remember: false
-            multiple: false
+            remember: true
+            multiple: true
             remember_roles:
               authenticated: authenticated
             reduce: false
@@ -569,10 +537,10 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          reduce_duplicates: false
+          reduce_duplicates: true
           vid: event_type
           type: select
-          hierarchy: false
+          hierarchy: true
           limit: true
           error_message: true
         field_event_date_value:
@@ -590,7 +558,7 @@ display:
             value: now
             type: offset
             granularity: minute
-          group: 1
+          group: 2
           exposed: false
           expose:
             operator_id: ''
@@ -625,16 +593,20 @@ display:
         operator: AND
         groups:
           1: AND
+          2: OR
       style:
-        type: html_list
+        type: grid_responsive
         options:
-          grouping: {  }
-          row_class: ''
-          default_row_class: true
+          grouping:
+            -
+              field: field_event_date_value_1
+              rendered: true
+              rendered_strip: false
           uses_fields: true
-          type: ul
-          wrapper_class: item-list
-          class: ''
+          columns: 4
+          cell_min_width: 150
+          grid_gutter: 20
+          alignment: horizontal
       row:
         type: fields
         options:
@@ -672,12 +644,11 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.body'
-        - 'config:field.storage.node.field_date'
         - 'config:field.storage.node.field_event_type'
         - 'config:field.storage.node.field_venue'
   block_1:
@@ -724,7 +695,7 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: h4
+          element_type: strong
           element_class: ''
           element_label_type: ''
           element_label_class: ''
@@ -799,7 +770,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          date_format: long
+          date_format: medium
           custom_date_format: ''
           timezone: ''
         title:
@@ -839,7 +810,7 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: strong
+          element_type: ''
           element_class: ''
           element_label_type: ''
           element_label_class: ''
@@ -909,7 +880,7 @@ display:
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: false
+          element_default_classes: true
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -928,12 +899,61 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        nothing:
+          id: nothing
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: custom
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: '<hr>'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
       pager:
         type: mini
         options:
           offset: 0
           pagination_heading_level: h4
-          items_per_page: 6
+          items_per_page: 9
           total_pages: null
           id: 0
           tags:
@@ -959,8 +979,10 @@ display:
         type: fields
         options:
           default_field_elements: true
-          inline: {  }
-          separator: ''
+          inline:
+            field_event_type: field_event_type
+            field_event_date_value: field_event_date_value
+          separator: ': '
           hide_empty: false
       defaults:
         pager: false
@@ -973,6 +995,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
@@ -986,13 +1009,12 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: groupevents
+      path: calltimes
       menu:
-        type: normal
+        type: none
         title: 'Call times'
-        description: null
+        description: ''
         weight: -44
-        enabled: false
         expanded: false
         menu_name: main
         parent: 'menu_link_content:a72c4dbd-d8c7-463a-b5c6-428cd3031f4d'
@@ -1002,11 +1024,10 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.body'
-        - 'config:field.storage.node.field_date'
         - 'config:field.storage.node.field_event_type'
         - 'config:field.storage.node.field_venue'

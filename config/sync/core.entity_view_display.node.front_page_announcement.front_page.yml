@@ -7,13 +7,12 @@ dependencies:
     - field.field.node.front_page_announcement.body
     - field.field.node.front_page_announcement.comment_node_front_page_announ
     - field.field.node.front_page_announcement.field_date
-    - field.field.node.front_page_announcement.field_image
+    - field.field.node.front_page_announcement.field_event_date
     - field.field.node.front_page_announcement.field_image_media
     - field.field.node.front_page_announcement.field_tags
     - node.type.front_page_announcement
   module:
     - datetime
-    - image
     - user
 id: node.front_page_announcement.front_page
 targetEntityType: node
@@ -29,17 +28,6 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_image:
-    type: image
-    label: hidden
-    settings:
-      image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 1
-    region: content
   links:
     settings: {  }
     third_party_settings: {  }
@@ -48,5 +36,6 @@ content:
 hidden:
   body: true
   comment_node_front_page_announ: true
+  field_event_date: true
   field_image_media: true
   field_tags: true

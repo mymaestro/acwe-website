@@ -7,16 +7,14 @@ dependencies:
     - field.field.node.date.body
     - field.field.node.date.comment_node_date
     - field.field.node.date.field_date
+    - field.field.node.date.field_event_date
     - field.field.node.date.field_event_type
-    - field.field.node.date.field_image
     - field.field.node.date.field_image_media
     - field.field.node.date.field_tags
     - field.field.node.date.field_venue
-    - image.style.medium
     - node.type.date
   module:
     - datetime_range
-    - image
     - text
     - user
 id: node.date.teaser
@@ -43,17 +41,6 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_image:
-    type: image
-    label: hidden
-    settings:
-      image_link: content
-      image_style: medium
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 3
-    region: content
   field_tags:
     type: entity_reference_label
     label: above
@@ -72,6 +59,7 @@ content:
     region: content
 hidden:
   comment_node_date: true
+  field_event_date: true
   field_event_type: true
   field_image_media: true
   links: true

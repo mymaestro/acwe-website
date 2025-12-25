@@ -8,7 +8,7 @@ slogan: 'In tune with Austin since 1975'
 page:
   403: ''
   404: /node/109
-  front: /upcoming
+  front: /frontpage
 admin_compact_mode: false
 weight_select_max: 100
 default_langcode: en

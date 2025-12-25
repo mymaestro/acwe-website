@@ -35,6 +35,8 @@ dependencies:
     - responsive_image
     - search
     - shortcut
+    - smart_date
+    - smart_date_recur
     - system
     - taxonomy
     - views_bulk_edit
@@ -69,10 +71,12 @@ permissions:
   - 'administer responsive images'
   - 'administer search'
   - 'administer shortcuts'
+  - 'administer smart date formats'
   - 'administer taxonomy'
   - 'administer url aliases'
   - 'administer views'
   - 'cancel account'
+  - 'cancel smart date recur instances'
   - 'change own username'
   - 'create article content'
   - 'create blog content'
@@ -123,9 +127,11 @@ permissions:
   - 'edit own photo_stream content'
   - 'edit own poll content'
   - 'edit own sponsor content'
+  - 'make smart dates recur'
   - 'notify of path changes'
   - 'post comments'
   - 'rebuild node access permissions'
+  - 'reschedule smart date recur instances'
   - 'search content'
   - 'select account cancellation method'
   - 'skip comment approval'

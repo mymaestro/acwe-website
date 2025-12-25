@@ -7,7 +7,7 @@ dependencies:
     - field.field.node.front_page_announcement.body
     - field.field.node.front_page_announcement.comment_node_front_page_announ
     - field.field.node.front_page_announcement.field_date
-    - field.field.node.front_page_announcement.field_image
+    - field.field.node.front_page_announcement.field_event_date
     - field.field.node.front_page_announcement.field_image_media
     - field.field.node.front_page_announcement.field_tags
     - node.type.front_page_announcement
@@ -35,5 +35,5 @@ hidden:
   body: true
   comment_node_front_page_announ: true
   field_date: true
-  field_image: true
+  field_event_date: true
   field_image_media: true

@@ -4,14 +4,10 @@ status: true
 dependencies:
   config:
     - system.menu.account
-    - views.view.blog_posts
-    - views.view.call_times
+    - views.view.group_member_events
     - views.view.group_nodes
     - views.view.listening_examples
-  content:
-    - 'block_content:basic:7e7749de-b7bd-46e8-b3f1-17b7d6e38e04'
   module:
-    - block_content
     - ds
     - forum
     - layout_builder
@@ -53,34 +49,6 @@ layout:
           exposed: {  }
         weight: 0
         additional: {  }
-      798b273d-a3a7-4977-a3dc-baa5897863f2:
-        uuid: 798b273d-a3a7-4977-a3dc-baa5897863f2
-        region: footer
-        configuration:
-          id: 'views_block:blog_posts-block_1'
-          label: ''
-          label_display: visible
-          provider: views
-          context_mapping: {  }
-          views_label: ''
-          items_per_page: null
-          exposed: {  }
-        weight: 0
-        additional: {  }
-      8816060a-2d76-4588-a1b0-7ce099180857:
-        uuid: 8816060a-2d76-4588-a1b0-7ce099180857
-        region: footer
-        configuration:
-          id: 'block_content:7e7749de-b7bd-46e8-b3f1-17b7d6e38e04'
-          label: 'Social media'
-          label_display: visible
-          provider: block_content
-          context_mapping: {  }
-          status: true
-          info: ''
-          view_mode: full
-        weight: 1
-        additional: {  }
       2f8991ca-9b62-4b16-88e1-5f2d320cd92d:
         uuid: 2f8991ca-9b62-4b16-88e1-5f2d320cd92d
         region: header
@@ -94,20 +62,6 @@ layout:
           items_per_page: null
           exposed: {  }
         weight: 1
-        additional: {  }
-      579e4e90-94e3-4fc8-8f98-f82dfb967379:
-        uuid: 579e4e90-94e3-4fc8-8f98-f82dfb967379
-        region: middle
-        configuration:
-          id: 'views_block:call_times-block_1'
-          label: ''
-          label_display: visible
-          provider: views
-          context_mapping: {  }
-          views_label: ''
-          items_per_page: 3
-          exposed: {  }
-        weight: 0
         additional: {  }
       4fde5488-27b1-474f-8099-cada4ae85921:
         uuid: 4fde5488-27b1-474f-8099-cada4ae85921
@@ -144,6 +98,20 @@ layout:
           render_parent: false
           suggestion: account
           hide_on_nonactive: false
+        weight: 0
+        additional: {  }
+      072294ca-47e4-4161-bb0d-137d81b60d80:
+        uuid: 072294ca-47e4-4161-bb0d-137d81b60d80
+        region: middle
+        configuration:
+          id: 'views_block:group_member_events-block_1'
+          label: ''
+          label_display: visible
+          provider: views
+          context_mapping: {  }
+          views_label: ''
+          items_per_page: 6
+          exposed: {  }
         weight: 0
         additional: {  }
     third_party_settings: {  }

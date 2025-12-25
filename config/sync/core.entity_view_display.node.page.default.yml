@@ -7,15 +7,12 @@ dependencies:
     - field.field.node.page.body
     - field.field.node.page.comment_node_page
     - field.field.node.page.field_image_media
-    - field.field.node.page.field_img
     - field.field.node.page.field_tags
     - field.field.node.page.layout_builder__layout
-    - image.style.large
     - node.type.page
   module:
     - comment
     - field_layout
-    - image
     - layout_builder
     - text
     - user
@@ -106,17 +103,6 @@ content:
     third_party_settings: {  }
     weight: 102
     region: second
-  field_img:
-    type: image
-    label: hidden
-    settings:
-      image_link: ''
-      image_style: large
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 0
-    region: content
   field_tags:
     type: entity_reference_label
     label: inline

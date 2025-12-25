@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.rss
-    - field.storage.node.field_date
     - field.storage.node.field_venue
     - node.type.date
     - system.menu.main
@@ -13,8 +12,8 @@ dependencies:
     - 'taxonomy_term:event_type:ec35cc85-c91e-425b-b52a-7836b1149466'
   module:
     - datetime
-    - datetime_range
     - node
+    - smart_date
     - taxonomy
     - user
 _core:
@@ -84,14 +83,14 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: false
-        field_date_1:
-          id: field_date_1
-          table: node__field_date
-          field: field_date
+        field_event_date_value:
+          id: field_event_date_value
+          table: node__field_event_date
+          field: field_event_date_value
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: field
+          plugin_id: date
           label: ''
           exclude: true
           alter:
@@ -133,23 +132,9 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: value
-          type: daterange_custom
-          settings:
-            timezone_override: ''
-            date_format: 'F Y'
-            from_to: start_date
-            separator: '-'
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
+          date_format: custom
+          custom_date_format: 'F Y'
+          timezone: ''
         title:
           id: title
           table: node_field_data
@@ -278,14 +263,14 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_date:
-          id: field_date
-          table: node__field_date
-          field: field_date
+        field_event_date_value_1:
+          id: field_event_date_value_1
+          table: node__field_event_date
+          field: field_event_date_value
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: field
+          plugin_id: date
           label: ''
           exclude: false
           alter:
@@ -327,23 +312,9 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: value
-          type: daterange_default
-          settings:
-            timezone_override: ''
-            format_type: olivero_medium
-            from_to: start_date
-            separator: '-'
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
+          date_format: long
+          custom_date_format: ''
+          timezone: ''
         nothing_1:
           id: nothing_1
           table: views
@@ -585,20 +556,21 @@ display:
           hierarchy: false
           limit: true
           error_message: true
-        field_date_value:
-          id: field_date_value
-          table: node__field_date
-          field: field_date_value
+        field_event_date_value:
+          id: field_event_date_value
+          table: node__field_event_date
+          field: field_event_date_value
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: datetime
+          plugin_id: date
           operator: '<'
           value:
             min: ''
             max: ''
             value: '-1 day'
             type: offset
+            granularity: minute
           group: 1
           exposed: false
           expose:
@@ -634,13 +606,12 @@ display:
         operator: AND
         groups:
           1: AND
-          2: OR
       style:
         type: grid_responsive
         options:
           grouping:
             -
-              field: field_date_1
+              field: field_event_date_value
               rendered: true
               rendered_strip: false
           columns: 4
@@ -691,7 +662,6 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_date'
         - 'config:field.storage.node.field_venue'
   feed_1:
     id: feed_1
@@ -729,7 +699,6 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_date'
         - 'config:field.storage.node.field_venue'
   page_1:
     id: page_1
@@ -758,5 +727,4 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_date'
         - 'config:field.storage.node.field_venue'

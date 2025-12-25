@@ -6,8 +6,8 @@ dependencies:
     - field.field.node.date.body
     - field.field.node.date.comment_node_date
     - field.field.node.date.field_date
+    - field.field.node.date.field_event_date
     - field.field.node.date.field_event_type
-    - field.field.node.date.field_image
     - field.field.node.date.field_image_media
     - field.field.node.date.field_tags
     - field.field.node.date.field_venue
@@ -15,7 +15,7 @@ dependencies:
   module:
     - datetime_range
     - layout_builder
-    - responsive_image
+    - smart_date
     - text
     - user
   theme:
@@ -31,28 +31,6 @@ third_party_settings:
           label: ''
           context_mapping: {  }
         components:
-          6e4f9ed2-81df-428d-ac88-496d44a6e430:
-            uuid: 6e4f9ed2-81df-428d-ac88-496d44a6e430
-            region: second
-            configuration:
-              id: 'field_block:node:date:field_date'
-              label: Date
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: daterange_default
-                label: hidden
-                settings:
-                  timezone_override: ''
-                  format_type: long
-                  from_to: both
-                  separator: '-'
-                third_party_settings: {  }
-            weight: -2
-            additional: {  }
           14fccee0-6644-46cf-88da-af2b5d59949d:
             uuid: 14fccee0-6644-46cf-88da-af2b5d59949d
             region: second
@@ -109,6 +87,45 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 0
             additional: {  }
+          67e2b5c5-4ee5-4e7f-94fd-389cef10c5ec:
+            uuid: 67e2b5c5-4ee5-4e7f-94fd-389cef10c5ec
+            region: second
+            configuration:
+              id: 'field_block:node:date:field_event_date'
+              label: 'Event date'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: smartdate_custom
+                label: hidden
+                settings:
+                  separator: ' - '
+                  time_diff:
+                    enabled: 0
+                    future_format: '@interval hence'
+                    past_format: '@interval ago'
+                    granularity: '2'
+                    refresh: '60'
+                    description: ''
+                  date_format: 'l, F j, Y'
+                  custom_date_format: ''
+                  timezone: ''
+                  tooltip:
+                    date_format: long
+                    custom_date_format: ''
+                  join: ', '
+                  time_format: 'g:ia'
+                  time_hour_format: ga
+                  allday_label: 'All day'
+                  date_first: '1'
+                  ampm_reduce: 1
+                  site_time_toggle: 0
+                third_party_settings: {  }
+            weight: -2
+            additional: {  }
         third_party_settings: {  }
 id: node.date.default
 targetEntityType: node
@@ -133,6 +150,28 @@ content:
     third_party_settings: {  }
     weight: 1
     region: second
+  field_event_date:
+    type: smartdate_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+      format: default
+      force_chronological: false
+      add_classes: false
+      time_wrapper: true
+      localize: false
+      parts:
+        - start
+        - end
+      duration:
+        separator: ' | '
+        unit: ''
+        decimals: 2
+        suffix: h
+    third_party_settings: {  }
+    weight: 7
+    region: second
   field_event_type:
     type: entity_reference_label
     label: hidden
@@ -141,17 +180,6 @@ content:
     third_party_settings: {  }
     weight: 3
     region: second
-  field_image:
-    type: responsive_image
-    label: hidden
-    settings:
-      responsive_image_style: ''
-      image_link: content
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 0
-    region: first
   field_image_media:
     type: entity_reference_entity_view
     label: hidden

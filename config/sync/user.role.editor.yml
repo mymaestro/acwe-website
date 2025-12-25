@@ -27,6 +27,8 @@ dependencies:
     - pathauto
     - search
     - shortcut
+    - smart_date
+    - smart_date_recur
     - system
 id: editor
 label: Editor
@@ -48,8 +50,10 @@ permissions:
   - 'administer pathauto'
   - 'administer search'
   - 'administer shortcuts'
+  - 'administer smart date formats'
   - 'administer url aliases'
   - 'cancel account'
+  - 'cancel smart date recur instances'
   - 'change own username'
   - 'create article content'
   - 'create blog content'
@@ -86,9 +90,11 @@ permissions:
   - 'edit own front_page_announcement content'
   - 'edit own page content'
   - 'edit own sponsor content'
+  - 'make smart dates recur'
   - 'notify of path changes'
   - 'post comments'
   - 'rebuild node access permissions'
+  - 'reschedule smart date recur instances'
   - 'search content'
   - 'select account cancellation method'
   - 'skip comment approval'

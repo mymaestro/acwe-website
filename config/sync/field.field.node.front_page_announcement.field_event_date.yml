@@ -1,0 +1,33 @@
+uuid: d2f196a2-b34b-4aed-baad-fe3f13a4dbbf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_date
+    - node.type.front_page_announcement
+  module:
+    - smart_date
+    - smart_date_recur
+third_party_settings:
+  smart_date_recur:
+    allow_recurring: false
+    month_limit: 12
+id: node.front_page_announcement.field_event_date
+field_name: field_event_date
+entity_type: node
+bundle: front_page_announcement
+label: 'Event date'
+description: 'Enter the date and time for the event, or date range for the announcement to be viewable'
+required: false
+translatable: false
+default_value:
+  -
+    default_duration: 60
+    default_duration_increments: "60|1 hour\r\n90\r\n120|2 hours\r\ncustom"
+    default_date_type: ''
+    default_date: ''
+    min: ''
+    max: ''
+default_value_callback: ''
+settings: {  }
+field_type: smartdate

@@ -7,16 +7,13 @@ dependencies:
     - core.entity_view_mode.node.full
     - field.field.node.article.body
     - field.field.node.article.comment_node_article
-    - field.field.node.article.field_image
     - field.field.node.article.field_image_media
     - field.field.node.article.field_slideshow
     - field.field.node.article.field_tags
-    - image.style.large
     - node.type.article
   module:
     - comment
     - field_layout
-    - image
     - layout_builder
     - text
     - user
@@ -36,28 +33,6 @@ third_party_settings:
           context_mapping: {  }
           column_widths: 33-67
         components:
-          4a2c563d-29e1-4544-8cfc-808926b614aa:
-            uuid: 4a2c563d-29e1-4544-8cfc-808926b614aa
-            region: first
-            configuration:
-              id: 'field_block:node:article:field_image'
-              label: Image
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: image
-                label: hidden
-                settings:
-                  image_link: ''
-                  image_style: ''
-                  image_loading:
-                    attribute: lazy
-                third_party_settings: {  }
-            weight: 1
-            additional: {  }
           ee016077-ea0c-4ba0-baa1-a69f9491788a:
             uuid: ee016077-ea0c-4ba0-baa1-a69f9491788a
             region: second
@@ -109,17 +84,6 @@ content:
       pager_id: 0
     third_party_settings: {  }
     weight: 20
-    region: content
-  field_image:
-    type: image
-    label: hidden
-    settings:
-      image_link: content
-      image_style: large
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 0
     region: content
   field_tags:
     type: entity_reference_label

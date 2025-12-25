@@ -104,6 +104,8 @@ module:
   search: 0
   serialization: 0
   shortcut: 0
+  smart_date: 0
+  smart_date_recur: 0
   symfony_mailer_lite: 0
   system: 0
   taxonomy: 0

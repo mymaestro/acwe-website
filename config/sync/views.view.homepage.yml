@@ -1,25 +1,23 @@
-uuid: 961a6a24-ec6e-4298-814a-d88d8b9ebea6
+uuid: 38f55596-d0d8-4122-a66d-853366d334de
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - field.storage.node.body
-    - field.storage.node.field_date
     - field.storage.node.field_image_media
     - field.storage.node.field_venue
     - node.type.article
     - node.type.date
     - node.type.front_page_announcement
   module:
-    - datetime
-    - datetime_range
     - node
+    - smart_date
     - text
     - user
 _core:
   default_config_hash: OEEnRQIjfIaCFRsz8U3VqDrE82ltQKlo8wNbQJRZXu0
-id: frontpage
-label: Frontpage
+id: homepage
+label: Home
 module: node
 description: 'All content promoted to the front page.'
 tag: default
@@ -227,19 +225,19 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_date:
-          id: field_date
-          table: node__field_date
-          field: field_date
+        field_event_date_value:
+          id: field_event_date_value
+          table: node__field_event_date
+          field: field_event_date_value
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: field
+          plugin_id: date
           label: ''
           exclude: false
           alter:
             alter_text: true
-            text: "{% if type matches '/Event/' %}\r\n<b>{{ field_date }}</b>\r\n{% endif %}"
+            text: "{% if type matches '/Event/' %}\r\n<b>{{ field_event_date_value }}</b>\r\n{% endif %}"
             make_link: false
             path: ''
             absolute: false
@@ -276,23 +274,9 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: value
-          type: daterange_default
-          settings:
-            timezone_override: ''
-            format_type: long
-            from_to: start_date
-            separator: '-'
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
+          date_format: long
+          custom_date_format: ''
+          timezone: ''
         field_venue:
           id: field_venue
           table: node__field_venue
@@ -586,20 +570,20 @@ display:
           empty: true
           title: Welcome!
       sorts:
-        field_date_value_1:
-          id: field_date_value_1
-          table: node__field_date
-          field: field_date_value
+        field_event_date_value:
+          id: field_event_date_value
+          table: node__field_event_date
+          field: field_event_date_value
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: datetime
+          plugin_id: date
           order: ASC
           expose:
             label: ''
             field_identifier: ''
           exposed: false
-          granularity: second
+          granularity: minute
         sticky:
           id: sticky
           table: node_field_data
@@ -714,20 +698,21 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        field_date_value:
-          id: field_date_value
-          table: node__field_date
-          field: field_date_value
+        field_event_date_end_value:
+          id: field_event_date_end_value
+          table: node__field_event_date
+          field: field_event_date_end_value
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: datetime
+          plugin_id: date
           operator: '>='
           value:
             min: ''
             max: ''
             value: now
             type: offset
+            granularity: minute
           group: 2
           exposed: false
           expose:
@@ -759,20 +744,21 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        field_date_end_value:
-          id: field_date_end_value
-          table: node__field_date
-          field: field_date_end_value
+        field_event_date_value:
+          id: field_event_date_value
+          table: node__field_event_date
+          field: field_event_date_value
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: datetime
+          plugin_id: date
           operator: '>='
           value:
             min: ''
             max: ''
             value: now
             type: offset
+            granularity: minute
           group: 2
           exposed: false
           expose:
@@ -874,7 +860,6 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.body'
-        - 'config:field.storage.node.field_date'
         - 'config:field.storage.node.field_image_media'
         - 'config:field.storage.node.field_venue'
   page_1:
@@ -884,7 +869,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: upcoming
+      path: frontpage
     cache_metadata:
       max-age: -1
       contexts:
@@ -894,6 +879,5 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.body'
-        - 'config:field.storage.node.field_date'
         - 'config:field.storage.node.field_image_media'
         - 'config:field.storage.node.field_venue'

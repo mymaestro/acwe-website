@@ -6,16 +6,13 @@ dependencies:
     - core.entity_view_display.comment.comment_node_article.default
     - field.field.node.article.body
     - field.field.node.article.comment_node_article
-    - field.field.node.article.field_image
     - field.field.node.article.field_image_media
     - field.field.node.article.field_slideshow
     - field.field.node.article.field_tags
-    - image.style.large
     - node.type.article
   module:
     - comment
     - field_layout
-    - image
     - layout_builder
     - text
     - user
@@ -96,17 +93,6 @@ content:
       pager_id: 0
     third_party_settings: {  }
     weight: 20
-    region: content
-  field_image:
-    type: image
-    label: hidden
-    settings:
-      image_link: content
-      image_style: large
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 0
     region: content
   field_image_media:
     type: entity_reference_entity_view

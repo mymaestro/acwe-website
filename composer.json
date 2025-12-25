@@ -64,6 +64,7 @@
         "drupal/recaptcha": "^3.4",
         "drupal/recaptcha_v3": "^2.0",
         "drupal/rules": "^4.0",
+        "drupal/smart_date": "^4.2",
         "drupal/superfish": "^1.8",
         "drupal/symfony_mailer_lite": "^2.0",
         "drupal/tour": "^2.0",

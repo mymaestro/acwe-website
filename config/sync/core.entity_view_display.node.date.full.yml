@@ -7,8 +7,8 @@ dependencies:
     - field.field.node.date.body
     - field.field.node.date.comment_node_date
     - field.field.node.date.field_date
+    - field.field.node.date.field_event_date
     - field.field.node.date.field_event_type
-    - field.field.node.date.field_image
     - field.field.node.date.field_image_media
     - field.field.node.date.field_tags
     - field.field.node.date.field_venue
@@ -16,7 +16,6 @@ dependencies:
   module:
     - date_ical
     - ds
-    - image
     - text
     - user
 third_party_settings:
@@ -73,17 +72,6 @@ content:
     third_party_settings: {  }
     weight: 2
     region: second
-  field_image:
-    type: image
-    label: hidden
-    settings:
-      image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 0
-    region: first
   field_tags:
     type: entity_reference_label
     label: inline
@@ -103,6 +91,7 @@ content:
     region: second
 hidden:
   comment_node_date: true
+  field_event_date: true
   field_event_type: true
   field_image_media: true
   links: true
