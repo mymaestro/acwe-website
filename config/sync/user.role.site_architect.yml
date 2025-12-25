@@ -16,6 +16,7 @@ dependencies:
     - node.type.photo_stream
     - node.type.poll
     - node.type.sponsor
+    - taxonomy.vocabulary.venue
   module:
     - block
     - comment
@@ -87,6 +88,7 @@ permissions:
   - 'create photo_stream content'
   - 'create poll content'
   - 'create sponsor content'
+  - 'create terms in venue'
   - 'create url aliases'
   - 'customize shortcut links'
   - 'delete any article content'
@@ -107,6 +109,8 @@ permissions:
   - 'delete own photo_stream content'
   - 'delete own poll content'
   - 'delete own sponsor content'
+  - 'delete term revisions in venue'
+  - 'delete terms in venue'
   - 'edit any article content'
   - 'edit any blog content'
   - 'edit any date content'
@@ -127,11 +131,13 @@ permissions:
   - 'edit own photo_stream content'
   - 'edit own poll content'
   - 'edit own sponsor content'
+  - 'edit terms in venue'
   - 'make smart dates recur'
   - 'notify of path changes'
   - 'post comments'
   - 'rebuild node access permissions'
   - 'reschedule smart date recur instances'
+  - 'revert term revisions in venue'
   - 'search content'
   - 'select account cancellation method'
   - 'skip comment approval'
@@ -144,4 +150,5 @@ permissions:
   - 'view any unpublished content'
   - 'view latest version'
   - 'view own unpublished content'
+  - 'view term revisions in venue'
   - 'view the administration theme'

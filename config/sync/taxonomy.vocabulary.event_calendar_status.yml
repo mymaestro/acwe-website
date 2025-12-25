@@ -2,7 +2,7 @@ uuid: 9daa588a-be9c-48a9-8e8f-d4836f68284a
 langcode: en
 status: true
 dependencies: {  }
-name: 'Event Status'
+name: 'Event status'
 vid: event_calendar_status
 description: Description
 weight: 1

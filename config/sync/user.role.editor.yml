@@ -13,6 +13,7 @@ dependencies:
     - node.type.front_page_announcement
     - node.type.page
     - node.type.sponsor
+    - taxonomy.vocabulary.venue
   module:
     - comment
     - contact
@@ -30,6 +31,7 @@ dependencies:
     - smart_date
     - smart_date_recur
     - system
+    - taxonomy
 id: editor
 label: Editor
 weight: 5
@@ -61,6 +63,7 @@ permissions:
   - 'create front_page_announcement content'
   - 'create page content'
   - 'create sponsor content'
+  - 'create terms in venue'
   - 'create url aliases'
   - 'customize shortcut links'
   - 'delete any article content'
@@ -76,6 +79,8 @@ permissions:
   - 'delete own front_page_announcement content'
   - 'delete own page content'
   - 'delete own sponsor content'
+  - 'delete term revisions in venue'
+  - 'delete terms in venue'
   - 'edit any article content'
   - 'edit any blog content'
   - 'edit any date content'
@@ -90,11 +95,13 @@ permissions:
   - 'edit own front_page_announcement content'
   - 'edit own page content'
   - 'edit own sponsor content'
+  - 'edit terms in venue'
   - 'make smart dates recur'
   - 'notify of path changes'
   - 'post comments'
   - 'rebuild node access permissions'
   - 'reschedule smart date recur instances'
+  - 'revert term revisions in venue'
   - 'search content'
   - 'select account cancellation method'
   - 'skip comment approval'
@@ -106,4 +113,5 @@ permissions:
   - 'view any unpublished content'
   - 'view latest version'
   - 'view own unpublished content'
+  - 'view term revisions in venue'
   - 'view the administration theme'

@@ -5,33 +5,7 @@ dependencies:
   config:
     - taxonomy.vocabulary.venue
   module:
-    - ds
     - text
-third_party_settings:
-  ds:
-    layout:
-      id: barrio_cardbasic
-      library: null
-      disable_css: false
-      entity_classes: all_classes
-      settings:
-        label: ''
-    regions:
-      first:
-        - taxonomy_term_title
-        - description
-    fields:
-      taxonomy_term_title:
-        plugin_id: taxonomy_term_title
-        weight: 0
-        label: hidden
-        formatter: default
-        settings:
-          link: false
-          'link class': ''
-          link_target: ''
-          wrapper: strong
-          class: ''
 id: taxonomy_term.venue.default
 targetEntityType: taxonomy_term
 bundle: venue
@@ -43,5 +17,5 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 1
-    region: first
+    region: content
 hidden: {  }
