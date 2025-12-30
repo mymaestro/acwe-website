@@ -1980,17 +1980,17 @@
         },
         {
             "name": "drupal/ds",
-            "version": "3.32.0",
+            "version": "3.34.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ds.git",
-                "reference": "8.x-3.32"
+                "reference": "8.x-3.34"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ds-8.x-3.32.zip",
-                "reference": "8.x-3.32",
-                "shasum": "d4aace7ceb2ac1af6e3c3afda47d6b1c9189cb16"
+                "url": "https://ftp.drupal.org/files/projects/ds-8.x-3.34.zip",
+                "reference": "8.x-3.34",
+                "shasum": "08a8b7ee991888b5e4290c03a25786d642d3eb25"
             },
             "require": {
                 "drupal/core": "^10.2 || ^11"
@@ -2002,8 +2002,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-3.32",
-                    "datestamp": "1765271987",
+                    "version": "8.x-3.34",
+                    "datestamp": "1766853218",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
