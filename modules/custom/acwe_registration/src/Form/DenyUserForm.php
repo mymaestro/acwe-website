@@ -54,6 +54,13 @@ class DenyUserForm extends ConfirmFormBase {
   /**
    * {@inheritdoc}
    */
+  public function getConfirmText() {
+    return $this->t('Deny');
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function buildForm(array $form, FormStateInterface $form_state, ?User $user = NULL) {
     $this->user = $user;
     return parent::buildForm($form, $form_state);

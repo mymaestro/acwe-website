@@ -54,8 +54,22 @@ class ApproveUserForm extends ConfirmFormBase {
   /**
    * {@inheritdoc}
    */
+  public function getConfirmText() {
+    return $this->t('Approve');
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function buildForm(array $form, FormStateInterface $form_state, ?User $user = NULL) {
     $this->user = $user;
+    
+    // Check if user was loaded
+    if (!$this->user) {
+      $this->messenger()->addError($this->t('User not found.'));
+      return $form;
+    }
+    
     return parent::buildForm($form, $form_state);
   }
 

@@ -21,6 +21,10 @@ acwe_registration.approve_user:
     _title: 'Approve Registration'
   requirements:
     _permission: 'manage acwe registration approvals'
+  options:
+    parameters:
+      user:
+        type: entity:user
 
 acwe_registration.deny_user:
   path: '/admin/people/pending/{user}/deny'
@@ -29,3 +33,7 @@ acwe_registration.deny_user:
     _title: 'Deny Registration'
   requirements:
     _permission: 'manage acwe registration approvals'
+  options:
+    parameters:
+      user:
+        type: entity:user

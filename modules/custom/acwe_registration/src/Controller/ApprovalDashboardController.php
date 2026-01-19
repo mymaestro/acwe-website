@@ -39,9 +39,16 @@ class ApprovalDashboardController extends ControllerBase {
       $time_ago = \Drupal::service('date.formatter')->formatInterval(
         \Drupal::time()->getRequestTime() - $created
       );
+
+      // Primary instrument/section display value.
+      $section = '-';
+      if ($user->hasField('field_primary_section') && !$user->get('field_primary_section')->isEmpty()) {
+        $section = $user->get('field_primary_section')->value;
+      }
       
       $rows[] = [
         'name' => $user->getDisplayName(),
+        'section' => $section,
         'email' => $user->getEmail(),
         'created' => $time_ago . ' ago',
         'operations' => [
@@ -84,6 +91,7 @@ class ApprovalDashboardController extends ControllerBase {
       '#type' => 'table',
       '#header' => [
         $this->t('Name'),
+        $this->t('Primary Section'),
         $this->t('Email'),
         $this->t('Registered'),
         $this->t('Operations'),

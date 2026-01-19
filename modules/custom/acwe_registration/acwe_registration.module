@@ -10,6 +10,8 @@ use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\node\NodeInterface;
+use Drupal\Core\Render\Element;
+
 
 /**
  * Implements hook_help().
@@ -147,6 +149,65 @@ function _acwe_registration_get_sections() {
     'percussion' => t('Percussion'),
   ];
 }
+
+/**
+ * Implements hook_form_alter().
+ * 
+ * Disable Gin's sticky form actions for approval/denial forms.
+ */
+function acwe_registration_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Handle both approval and denial forms
+  if (in_array($form_id, ['acwe_registration_approve_user', 'acwe_registration_deny_user'])) {
+    // Use Gin's built-in class to disable sticky form actions
+    if (!isset($form['#attributes']['class'])) {
+      $form['#attributes']['class'] = [];
+    }
+    $form['#attributes']['class'][] = 'gin--disable-sticky-form-actions';
+    
+    // Add a process callback to fix the actions after Gin processes them
+    $form['actions']['#process'][] = '_acwe_registration_process_form_actions';
+    // Run late so we override any earlier processors (including Gin's)
+    $form['actions']['#weight'] = 100;
+  }
+}
+
+/**
+ * Process callback to fix form actions visibility.
+ * 
+ * Runs after Gin has processed the actions to override tabindex settings.
+ */
+function _acwe_registration_process_form_actions(&$element, FormStateInterface $form_state, &$complete_form) {
+  // Force visibility styles
+  if (!isset($element['#attributes']['style'])) {
+    $element['#attributes']['style'] = '';
+  }
+  $element['#attributes']['style'] .= 'display: block !important; visibility: visible !important; opacity: 1 !important; margin-top: 20px;';
+  // Signal to Gin JS that sticky is disabled
+  $element['#attributes']['data-gin-sticky-disabled'] = 'true';
+  
+  // Remove the gin-sticky-form-actions class to prevent Gin's JavaScript from hiding it
+  if (isset($element['#attributes']['class'])) {
+    $element['#attributes']['class'] = array_diff(
+      (array)$element['#attributes']['class'],
+      ['gin-sticky-form-actions']
+    );
+  }
+  
+  // Fix tabindex on all children (buttons, links)
+  foreach (Element::children($element) as $child_key) {
+    $child = &$element[$child_key];
+    if (is_array($child)) {
+      // Set tabindex to 0 for all clickable elements
+      if (!isset($child['#attributes'])) {
+        $child['#attributes'] = [];
+      }
+      $child['#attributes']['tabindex'] = '0';
+    }
+  }
+  
+  return $element;
+}
+
 
 /**
  * Implements hook_user_insert().
