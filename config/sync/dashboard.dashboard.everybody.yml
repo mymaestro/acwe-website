@@ -1,9 +1,0 @@
-uuid: 7fdfe060-49b3-4aab-9808-8627debc3f7c
-langcode: en
-status: true
-dependencies: {  }
-id: everybody
-label: Everybody
-description: 'Hope abounds that this works and provides value'
-layout: {  }
-weight: 0

@@ -54,8 +54,6 @@
         "drupal/menu_block": "^1.13",
         "drupal/message": "^1.8",
         "drupal/message_notify": "^1.5",
-        "drupal/migrate_plus": "^6.0",
-        "drupal/migrate_tools": "^6.0",
         "drupal/panels": "^4.8",
         "drupal/paragraphs": "^1.18",
         "drupal/pathauto": "^1.13",

@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - dashboard.dashboard.everybody
     - dashboard.dashboard.section_dashboard
     - media.type.document
     - media.type.remote_video
@@ -43,7 +42,6 @@ permissions:
   - 'skip antibot'
   - 'use advanced search'
   - 'view date revisions'
-  - 'view everybody dashboard'
   - 'view media'
   - 'view own unpublished media'
   - 'view paragraph content carousel_item'

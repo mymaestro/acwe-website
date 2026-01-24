@@ -6,19 +6,21 @@ dependencies:
     - node.type.forum
   module:
     - acwe_registration
+    - contextual
     - forum
     - group
+    - help
     - node
-    - system
 id: registration_approver
 label: 'Section lead'
 weight: 7
 is_admin: false
 permissions:
-  - 'access administration pages'
+  - 'access contextual links'
   - 'access group overview'
+  - 'access help pages'
+  - 'access user profiles'
   - 'administer forums'
   - 'delete any forum content'
   - 'edit any forum content'
   - 'manage acwe registration approvals'
-  - 'view the administration theme'

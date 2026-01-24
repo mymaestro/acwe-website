@@ -32,6 +32,7 @@ dependencies:
     - smart_date_recur
     - system
     - taxonomy
+    - toolbar
 id: editor
 label: Editor
 weight: 5
@@ -45,6 +46,7 @@ permissions:
   - 'access help pages'
   - 'access site in maintenance mode'
   - 'access the email types overview'
+  - 'access toolbar'
   - 'access user profiles'
   - 'administer comments'
   - 'administer contact forms'

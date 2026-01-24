@@ -7,7 +7,8 @@ dependencies:
     - field.storage.node.field_venue
     - taxonomy.vocabulary.event_type
   content:
-    - 'taxonomy_term:event_type:8d0af2be-1532-4143-8dfc-9670ce8ecb9d'
+    - 'taxonomy_term:event_type:17c30393-58e2-49dc-a83a-390aba303f7d'
+    - 'taxonomy_term:event_type:402f53c0-30e9-4b05-bbca-2c2532cb823c'
     - 'taxonomy_term:event_type:9732b284-6c4e-4927-b64e-741a2fae45e7'
     - 'taxonomy_term:event_type:bfe6f356-efee-49e7-9fb0-ddaaf5b5e5b6'
     - 'taxonomy_term:event_type:ec35cc85-c91e-425b-b52a-7836b1149466'
@@ -553,10 +554,11 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
+            72: 72
             17: 17
             16: 16
-            32: 32
             18: 18
+            70: 70
           group: 1
           exposed: true
           expose:

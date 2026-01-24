@@ -9,7 +9,6 @@ dependencies:
     - views.view.listening_examples
   module:
     - ds
-    - forum
     - layout_builder
     - menu_block
     - views
@@ -63,20 +62,6 @@ layout:
           exposed: {  }
         weight: 1
         additional: {  }
-      4fde5488-27b1-474f-8099-cada4ae85921:
-        uuid: 4fde5488-27b1-474f-8099-cada4ae85921
-        region: right
-        configuration:
-          id: forum_new_block
-          label: 'New forum topics'
-          label_display: visible
-          provider: forum
-          context_mapping: {  }
-          properties:
-            administrative: '1'
-          block_count: 5
-        weight: 1
-        additional: {  }
       3a81ac98-5411-4444-bc69-9046bfaceb61:
         uuid: 3a81ac98-5411-4444-bc69-9046bfaceb61
         region: right
@@ -113,6 +98,20 @@ layout:
           items_per_page: 6
           exposed: {  }
         weight: 0
+        additional: {  }
+      3f64f89f-7ccf-49bf-ac90-2d8a1ae30899:
+        uuid: 3f64f89f-7ccf-49bf-ac90-2d8a1ae30899
+        region: right
+        configuration:
+          id: 'views_block:group_nodes-block_1'
+          label: 'Section notes'
+          label_display: visible
+          provider: views
+          context_mapping: {  }
+          views_label: 'Section notes'
+          items_per_page: 3
+          exposed: {  }
+        weight: 2
         additional: {  }
     third_party_settings: {  }
 weight: 1
