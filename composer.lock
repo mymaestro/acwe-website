@@ -2160,17 +2160,17 @@
         },
         {
             "name": "drupal/eca",
-            "version": "3.1.0",
+            "version": "3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/eca.git",
-                "reference": "3.1.0"
+                "reference": "3.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/eca-3.1.0.zip",
-                "reference": "3.1.0",
-                "shasum": "c75edf48499fca80854f0efc7b4287b4f613ccf8"
+                "url": "https://ftp.drupal.org/files/projects/eca-3.1.1.zip",
+                "reference": "3.1.1",
+                "shasum": "1575cf4e745bb85984f71535b13b30b51d000569"
             },
             "require": {
                 "dragonmantank/cron-expression": "^3.1",
@@ -2185,8 +2185,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "3.1.0",
-                    "datestamp": "1774278887",
+                    "version": "3.1.1",
+                    "datestamp": "1776350887",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3825,17 +3825,17 @@
         },
         {
             "name": "drupal/modeler_api",
-            "version": "1.1.1",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/modeler_api.git",
-                "reference": "1.1.1"
+                "reference": "1.1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/modeler_api-1.1.1.zip",
-                "reference": "1.1.1",
-                "shasum": "bcd04330c0b8f8fcdf3fbc67f34301ad0b23a396"
+                "url": "https://ftp.drupal.org/files/projects/modeler_api-1.1.2.zip",
+                "reference": "1.1.2",
+                "shasum": "da5d8f2644f8d85cca208cdaae2557d5a9469872"
             },
             "require": {
                 "drupal/core": "^11.3 || ^12.0",
@@ -3844,8 +3844,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.1.1",
-                    "datestamp": "1775052389",
+                    "version": "1.1.2",
+                    "datestamp": "1776350984",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6378,11 +6378,11 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "2.1.48",
+            "version": "2.1.50",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/231397213efb7c0a066ee024b5c3c87f2d3adfa0",
-                "reference": "231397213efb7c0a066ee024b5c3c87f2d3adfa0",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/d452086fb4cf648c6b2d8cf3b639351f79e4f3e2",
+                "reference": "d452086fb4cf648c6b2d8cf3b639351f79e4f3e2",
                 "shasum": ""
             },
             "require": {
@@ -6427,7 +6427,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-04-15T20:24:19+00:00"
+            "time": "2026-04-17T13:10:32+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
