@@ -7,14 +7,9 @@ dependencies:
     - field.field.media.remote_video.field_media_oembed_video
     - media.type.remote_video
   module:
-    - field_layout
     - layout_builder
     - media
 third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
   layout_builder:
     enabled: false
     allow_custom: false

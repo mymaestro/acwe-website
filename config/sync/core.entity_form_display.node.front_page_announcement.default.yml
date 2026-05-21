@@ -12,17 +12,10 @@ dependencies:
     - node.type.front_page_announcement
   module:
     - comment
-    - field_layout
-    - layout_discovery
     - media_library
     - path
     - smart_date
     - text
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
 id: node.front_page_announcement.default
 targetEntityType: node
 bundle: front_page_announcement

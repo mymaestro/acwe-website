@@ -12,17 +12,12 @@ dependencies:
     - node.type.article
   module:
     - comment
-    - field_layout
     - layout_builder
     - text
     - user
   theme:
     - bootstrap_barrio
 third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
   layout_builder:
     enabled: true
     allow_custom: false

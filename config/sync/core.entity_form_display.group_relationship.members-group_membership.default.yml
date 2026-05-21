@@ -6,14 +6,7 @@ dependencies:
     - field.field.group_relationship.members-group_membership.group_roles
     - group.relationship_type.members-group_membership
   module:
-    - field_layout
-    - layout_discovery
     - path
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
 id: group_relationship.members-group_membership.default
 targetEntityType: group_relationship
 bundle: members-group_membership

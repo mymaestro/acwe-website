@@ -6,14 +6,6 @@ dependencies:
     - field.field.profile.user_profile.field_first_name
     - field.field.profile.user_profile.field_last_name
     - profile.type.user_profile
-  module:
-    - field_layout
-    - layout_discovery
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
 id: profile.user_profile.default
 targetEntityType: profile
 bundle: user_profile

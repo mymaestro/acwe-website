@@ -6,15 +6,8 @@ dependencies:
     - easy_email.easy_email_type.notify_newuser
     - field.field.easy_email.notify_newuser.field_user
   module:
-    - field_layout
     - file
-    - layout_discovery
     - text
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
 id: easy_email.notify_newuser.default
 targetEntityType: easy_email
 bundle: notify_newuser

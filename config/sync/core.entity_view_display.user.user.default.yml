@@ -7,15 +7,10 @@ dependencies:
     - field.field.user.user.field_primary_section
     - field.field.user.user.user_picture
   module:
-    - field_layout
     - image
     - layout_builder
     - user
 third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
   layout_builder:
     enabled: true
     allow_custom: false
@@ -196,3 +191,4 @@ hidden:
   blog__personal_blog_link: true
   field_member_status: true
   field_primary_section: true
+  user_profile_profiles: true

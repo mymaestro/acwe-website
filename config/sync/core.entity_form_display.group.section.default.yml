@@ -5,14 +5,7 @@ dependencies:
   config:
     - group.type.section
   module:
-    - field_layout
-    - layout_discovery
     - path
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
 id: group.section.default
 targetEntityType: group
 bundle: section

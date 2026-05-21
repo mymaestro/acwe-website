@@ -7,15 +7,10 @@ dependencies:
     - field.field.block_content.basic.body
     - field.field.block_content.basic.layout_builder__layout
   module:
-    - field_layout
     - layout_builder
     - layout_discovery
     - text
 third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
   layout_builder:
     enabled: true
     allow_custom: true

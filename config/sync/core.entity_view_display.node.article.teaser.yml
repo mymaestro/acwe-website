@@ -11,16 +11,11 @@ dependencies:
     - field.field.node.article.field_tags
     - node.type.article
   module:
-    - field_layout
     - layout_builder
     - layout_discovery
     - text
     - user
 third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
   layout_builder:
     enabled: true
     sections:

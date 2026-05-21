@@ -13,18 +13,11 @@ dependencies:
     - field.field.node.date.field_venue
     - node.type.date
   module:
-    - field_layout
-    - layout_discovery
     - media_library
     - path
     - smart_date
     - smart_date_recur
     - text
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
 id: node.date.default
 targetEntityType: node
 bundle: date

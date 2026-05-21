@@ -7,14 +7,7 @@ dependencies:
     - node.type.poll
   module:
     - comment
-    - field_layout
-    - layout_discovery
     - path
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
 id: node.poll.default
 targetEntityType: node
 bundle: poll

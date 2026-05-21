@@ -8,14 +8,9 @@ dependencies:
     - image.style.medium
     - media.type.remote_video
   module:
-    - field_layout
     - image
     - layout_builder
 third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
   layout_builder:
     enabled: false
     allow_custom: false
