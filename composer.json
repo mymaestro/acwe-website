@@ -26,9 +26,9 @@
         "drupal/components": "^3.1",
         "drupal/contact_storage": "^1.5",
         "drupal/context": "^5.0@RC",
-        "drupal/core-composer-scaffold": "^11.1",
-        "drupal/core-project-message": "^11.1",
-        "drupal/core-recommended": "^11.1",
+        "drupal/core-composer-scaffold": "11.3.12",
+        "drupal/core-project-message": "11.3.12",
+        "drupal/core-recommended": "11.3.12",
         "drupal/core-vendor-hardening": "^11.1",
         "drupal/ctools": "^4.1",
         "drupal/dashboard": "^2.1",
@@ -90,6 +90,11 @@
         "sort-packages": true,
         "platform": {
             "php": "8.3.27"
+        },
+        "policy": {
+            "advisories": {
+                "ignore-id": ["PKSA-93qv-9n9h-6k6p", "PKSA-k22t-f949-t9g6", "PKSA-7qs6-zvnz-h66r"]
+            }
         }
     },
     "extra": {
