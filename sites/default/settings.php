@@ -902,6 +902,10 @@ $databases['default']['default'] = [
   'driver' => 'mysql',
 ];
 
+// In Drupal 12 this setting will default to FALSE, which means HTML5 validation will be disabled on all forms. Make sure your forms will still work the way you expect before upgrading by setting the value to FALSE in a test environment.
+// The enable_html5_validation setting will be removed in Drupal 13, and HTML5 validation will be disabled on all forms. Make sure your forms will still work the way you expect before upgrading by setting the value to FALSE in a test environment.
+$settings['enable_html5_validation'] = TRUE;
+
 // Load local settings if they exist
 if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
   include $app_root . '/' . $site_path . '/settings.local.php';
