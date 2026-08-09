@@ -1,0 +1,4 @@
+include:
+  - project: gitlab-ci-cd/general
+    ref: main
+    file: '/tagrelease.yml'

@@ -95,6 +95,8 @@ module:
   recaptcha_v3: 0
   responsive_image: 0
   search: 0
+  search_help: 0
+  search_node: 0
   serialization: 0
   shortcut: 0
   smart_date: 0
@@ -104,7 +106,6 @@ module:
   taxonomy: 0
   text: 0
   token: 0
-  toolbar: 0
   twig_tweak: 0
   typed_data: 0
   update: 0
@@ -125,7 +126,6 @@ module:
 theme:
   olivero: 0
   claro: 0
-  stable9: 0
   gin: 0
   bootstrap_barrio: 0
   acwe2025_bootstrap: 0

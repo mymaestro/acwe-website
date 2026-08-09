@@ -10,9 +10,6 @@ features:
 logo:
   path: sites/default/files/ACWElogo/bitmap/logo_text_100x128.png
   use_default: false
-third_party_settings:
-  shortcut:
-    module_link: true
 mobile_menu_all_widths: 0
 site_branding_bg_color: white
 base_primary_color: '#1b9ae4'

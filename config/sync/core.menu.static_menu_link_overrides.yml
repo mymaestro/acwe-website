@@ -10,12 +10,12 @@ definitions:
   standard__front_page:
     menu_name: main
     parent: ''
-    weight: -43
+    weight: -45
     expanded: false
     enabled: false
   blog__myblog_link:
-    enabled: false
     menu_name: account
     parent: ''
-    expanded: false
     weight: 0
+    expanded: false
+    enabled: false

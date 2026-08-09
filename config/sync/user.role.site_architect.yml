@@ -40,7 +40,6 @@ dependencies:
     - smart_date_recur
     - system
     - taxonomy
-    - toolbar
     - views_bulk_edit
     - views_ui
 id: site_architect
@@ -57,7 +56,6 @@ permissions:
   - 'access site in maintenance mode'
   - 'access site-wide contact form'
   - 'access the email types overview'
-  - 'access toolbar'
   - 'access user contact forms'
   - 'access user profiles'
   - 'administer blocks'

@@ -346,7 +346,7 @@ display:
         type: normal
         title: 'Concert seasons'
         description: 'Concerts seasons and programs'
-        weight: -41
+        weight: -40
         expanded: false
         menu_name: main
         parent: 'menu_link_content:cc277473-f656-4dc6-8d92-8a04473608c5'

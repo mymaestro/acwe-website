@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - field.storage.node.body
+    - filter.format.basic_html
+    - filter.format.filtered_html
     - node.type.sponsor
   module:
     - text
@@ -13,12 +15,14 @@ entity_type: node
 bundle: sponsor
 label: Body
 description: ''
-required: false
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
   display_summary: true
   required_summary: false
-  allowed_formats: {  }
+  allowed_formats:
+    - basic_html
+    - filtered_html
 field_type: text_with_summary

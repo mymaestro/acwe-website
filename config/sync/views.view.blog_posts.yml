@@ -471,7 +471,7 @@ display:
         enabled: true
         expanded: false
         menu_name: main
-        parent: ''
+        parent: 'menu_link_content:cc277473-f656-4dc6-8d92-8a04473608c5'
     cache_metadata:
       max-age: -1
       contexts:

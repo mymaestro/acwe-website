@@ -1,0 +1,25 @@
+uuid: 16b40a39-43b1-43be-9b51-64f98a0c4c55
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.corporate_sponsor
+  module:
+    - views
+  theme:
+    - acwe2025_bootstrap
+id: acwe2025_bootstrap_views_block__corporate_sponsor_block_1
+theme: acwe2025_bootstrap
+region: footer_first
+weight: 0
+provider: null
+plugin: 'views_block:corporate_sponsor-block_1'
+settings:
+  id: 'views_block:corporate_sponsor-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: null
+  exposed: {  }
+visibility: {  }

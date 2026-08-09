@@ -3,60 +3,106 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_display.comment.comment_node_sponsor.default
     - field.field.node.sponsor.body
     - field.field.node.sponsor.comment_node_sponsor
     - field.field.node.sponsor.field_corporate_logo
     - field.field.node.sponsor.field_tags
     - node.type.sponsor
   module:
-    - comment
-    - image
-    - text
+    - layout_builder
     - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          column_widths: 33-67
+        components:
+          d2b9a0df-7691-417b-9905-fdb01a7707b9:
+            uuid: d2b9a0df-7691-417b-9905-fdb01a7707b9
+            region: first
+            configuration:
+              id: 'field_block:node:sponsor:field_corporate_logo'
+              label: 'Corporate logo'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: ''
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          32d74495-b42f-4f42-8f40-aabb76f11ae1:
+            uuid: 32d74495-b42f-4f42-8f40-aabb76f11ae1
+            region: second
+            configuration:
+              id: 'field_block:node:sponsor:body'
+              label: Body
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: visually_hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          ef68539a-fcba-4c9c-921f-0a5b9e7d884e:
+            uuid: ef68539a-fcba-4c9c-921f-0a5b9e7d884e
+            region: second
+            configuration:
+              id: 'extra_field_block:node:sponsor:links'
+              label: Links
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          a1ead560-850f-4fb9-ab50-86d281529e7b:
+            uuid: a1ead560-850f-4fb9-ab50-86d281529e7b
+            region: second
+            configuration:
+              id: 'field_block:node:sponsor:field_tags'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: inline
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+        third_party_settings: {  }
 id: node.sponsor.default
 targetEntityType: node
 bundle: sponsor
 mode: default
-content:
-  body:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 101
-    region: content
-  comment_node_sponsor:
-    type: comment_default
-    label: hidden
-    settings:
-      view_mode: default
-      pager_id: 0
-    third_party_settings: {  }
-    weight: 20
-    region: content
-  field_corporate_logo:
-    type: image
-    label: hidden
-    settings:
-      image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 0
-    region: content
-  field_tags:
-    type: entity_reference_label
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
-    region: content
-hidden: {  }
+content: {  }
+hidden:
+  body: true
+  comment_node_sponsor: true
+  field_corporate_logo: true
+  field_tags: true
+  links: true
