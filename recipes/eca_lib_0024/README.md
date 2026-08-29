@@ -13,7 +13,7 @@ The creation of this model was recorded with lots of additional explanations (e.
 composer require drupal-eca-recipe/eca_lib_0024
 
 # Apply recipe with Drush (requires version 13 or later):
-drush recipe ../recipes/{{ rawid }}
+drush recipe ../recipes/eca_lib_0024
 
 # Apply recipe without Drush:
 cd web && php core/scripts/drupal recipe ../recipes/eca_lib_0024

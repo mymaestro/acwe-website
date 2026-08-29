@@ -9,6 +9,7 @@ install:
   - eca_content
   - eca_user
   - eca_views
+  - modeler_api
   - user
 config:
   strict: false
