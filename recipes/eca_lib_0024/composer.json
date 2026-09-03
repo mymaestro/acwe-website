@@ -1,7 +1,7 @@
 {
     "name": "drupal-eca-recipe/eca_lib_0024",
     "type": "drupal-recipe",
-    "description": "This model sends an email to all users of a certain role. It contains a view with a contextual filter to limit the list of users to those of the given role.\n\nThe creation of this model was recorded with lots of additional explanations (e.g. how to use an existing model as a starting point) and [can be watched here](https://tube.tchncs.de/w/8dZuXYZHmuDTutddrTZUfE).",
+    "description": "Emails every user holding a given role, using a view with a contextual filter to select the recipients.",
     "license": "GPL-2.0-or-later",
     "require": {
         "drupal/eca": "*",

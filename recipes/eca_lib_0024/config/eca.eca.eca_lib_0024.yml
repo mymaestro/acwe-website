@@ -11,15 +11,13 @@ dependencies:
     - modeler_api
 third_party_settings:
   modeler_api:
+    storage: none
     label: 'Send email to users of a given role'
     documentation: |-
       This model sends an email to all users of a certain role. It contains a view with a contextual filter to limit the list of users to those of the given role.
 
       The creation of this model was recorded with lots of additional explanations (e.g. how to use an existing model as a starting point) and [can be watched here](https://tube.tchncs.de/w/8dZuXYZHmuDTutddrTZUfE).
-    summary: |-
-      This model sends an email to all users of a certain role. It contains a view with a contextual filter to limit the list of users to those of the given role.
-
-      The creation of this model was recorded with lots of additional explanations (e.g. how to use an existing model as a starting point) and [can be watched here](https://tube.tchncs.de/w/8dZuXYZHmuDTutddrTZUfE).
+    summary: 'Emails every user holding a given role, using a view with a contextual filter to select the recipients.'
     tags:
       - simple
       - views
@@ -28,7 +26,6 @@ third_party_settings:
       - 'switch user'
       - email
     version: v1
-    storage: none
 id: eca_lib_0024
 weight: 0
 template: null
