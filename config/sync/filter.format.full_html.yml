@@ -8,6 +8,15 @@ name: 'Full HTML'
 format: full_html
 weight: -9
 filters:
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: false
+    weight: -10
+    settings:
+      allowed_html: '<i class="bi bi-*">'
+      filter_html_help: true
+      filter_html_nofollow: false
   filter_htmlcorrector:
     id: filter_htmlcorrector
     provider: filter
