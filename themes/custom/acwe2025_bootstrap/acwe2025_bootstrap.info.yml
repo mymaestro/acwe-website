@@ -7,6 +7,7 @@ base theme: bootstrap_barrio
 libraries:
   - acwe2025_bootstrap/bootstrap_cdn
   - acwe2025_bootstrap/global-styling
+  - acwe2025_bootstrap/bootstrap-icons-cdn
 
 breakpoints:
   default: acwe2025_bootstrap.breakpoints.yaml
