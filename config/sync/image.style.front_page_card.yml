@@ -1,0 +1,15 @@
+uuid: 8b378285-b25d-4ac1-b15d-c72530718e2d
+langcode: en
+status: true
+dependencies: {  }
+name: front_page_card
+label: 'Front page card'
+effects:
+  f4b9951c-8102-4e80-acec-80fd6d74b3eb:
+    uuid: f4b9951c-8102-4e80-acec-80fd6d74b3eb
+    id: image_scale
+    weight: 1
+    data:
+      width: 500
+      height: 300
+      upscale: false

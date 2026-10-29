@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: 7wcI6NyqWC9VsglvfEKjmQ9XY_D7lsTWkq0cRM4Ji7A
+initial_image_styles:
+  front_page_card: front_page_card
+  large: large
+  media_library: media_library
+  medium: medium
+queue_image_styles:
+  front_page_card: front_page_card
+  large: large
+  media_library: media_library
+  medium: medium
+image_styles:
+  instant:
+    front_page_card: front_page_card

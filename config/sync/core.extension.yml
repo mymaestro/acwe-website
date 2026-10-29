@@ -120,6 +120,7 @@ module:
   forum: 1
   pathauto: 1
   ds_extras: 2
+  image_style_warmer: 10
   views: 10
   paragraphs: 11
   standard: 1000
