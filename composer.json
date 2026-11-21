@@ -68,7 +68,7 @@
         "drupal/symfony_mailer_lite": "^2.0",
         "drupal/tour": "^2.0",
         "drupal/twig_tweak": "^3.4",
-        "drupal/upgrade_status": "^4.0",
+        "drupal/upgrade_status": "^5.0",
         "drupal/views_bulk_edit": "^3.0",
         "drupal/views_bulk_operations": "^4.4",
         "drupal/views_random_seed": "^1.3"
