@@ -39,7 +39,7 @@
         "drupal/eca": "^3.0",
         "drupal/eca_cm": "^1.0",
         "drupal/entity": "^1.4",
-        "drupal/entity_usage": "^2.0@beta",
+        "drupal/entity_usage": "^5.0",
         "drupal/field_group": "^4.0",
         "drupal/flood_control": "^3.0",
         "drupal/forum": "^1.0",
